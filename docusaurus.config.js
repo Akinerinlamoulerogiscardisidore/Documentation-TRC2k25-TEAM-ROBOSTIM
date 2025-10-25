@@ -2,10 +2,10 @@
 module.exports = {
   title: 'TRC Challenge - Team ROBOSTIM',
   tagline: '',
-  url: 'https://votre-site.com',
-  baseUrl: '/',
-  organizationName: 'UNSTIM',
-  projectName: 'trc-documentation',
+  url: 'https://Akinerinlamoulerogiscardisidore.github.io',
+  baseUrl: '/Documentation-TRC2k25-TEAM-ROBOSTIM/',
+  organizationName: 'Akinerinlamoulerogiscardisidore',
+  projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
   favicon: 'img/favicon.ico',
 
   // Configuration corrigée pour le mode sombre
