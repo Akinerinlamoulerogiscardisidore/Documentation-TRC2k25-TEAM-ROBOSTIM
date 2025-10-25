@@ -13,12 +13,12 @@ export default function Home() {
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       
       {/* SECTION HERO AVEC IMAGE COMPLÈTE */}
-      <header className="hero-section" style={{ 
+      <header className="hero-section section" style={{ 
         background: `url(${imgUrl('robot-background.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        padding: '8rem 0',
+        padding: 'var(--spacing-3xl) 0',
         textAlign: 'center',
         color: 'white',
         minHeight: '100vh',
@@ -936,7 +936,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="row">
+          <div className="grid grid-3">
             {[
               { 
                 icon: '🔌', 

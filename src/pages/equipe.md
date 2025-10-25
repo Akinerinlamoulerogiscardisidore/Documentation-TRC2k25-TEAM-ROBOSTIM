@@ -37,17 +37,17 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 
 ## 👥 Notre **Team**
 
-<div style={{
+<div className="section" style={{
   textAlign: 'center',
   margin: '4rem 0',
   padding: '2rem 0'
 }}>
-  <div style={{
+  <div className="gallery-item" style={{
     maxWidth: '100%',
     margin: '0 auto',
-    borderRadius: '20px',
+    borderRadius: 'var(--border-radius-xl)',
     overflow: 'hidden',
-    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+    boxShadow: 'var(--shadow-xl)',
     position: 'relative'
   }}>
     <img 
@@ -122,30 +122,31 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   border: '1px solid var(--ifm-color-emphasis-200)',
   transition: 'all 0.3s ease'
 }}>
-  <div style={{marginRight: '3rem', flexShrink: 0}}>
+  <div className="team-member-photo-container" style={{marginRight: '3rem', flexShrink: 0}}>
     <img 
       src="/img/team/giscard.jpg" 
       alt="Giscard AKINERINLA" 
+      className="team-member-photo"
       style={{
         width: '300px', 
         height: '400px', 
-        borderRadius: '25px', 
+        borderRadius: 'var(--border-radius-xl)', 
         objectFit: 'cover', 
         border: '6px solid var(--color-electronique)',
-        boxShadow: '0 16px 48px rgba(14, 165, 233, 0.4)',
+        boxShadow: 'var(--shadow-xl)',
         transition: 'all 0.3s ease'
       }} 
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.02)';
-        e.target.style.boxShadow = '0 20px 60px rgba(14, 165, 233, 0.5)';
+        e.target.style.boxShadow = 'var(--shadow-xl)';
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 16px 48px rgba(14, 165, 233, 0.4)';
+        e.target.style.boxShadow = 'var(--shadow-xl)';
       }}
     />
   </div>
-  <div style={{flex: 1}}>
+  <div className="team-member-info" style={{flex: 1}}>
     <div style={{
       display: 'flex',
       alignItems: 'center',
@@ -189,17 +190,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '3rem', flexShrink: 0}}>
     <img 
       src="/img/team/gracia.jpg" 
@@ -267,17 +258,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/newton.jpg" 
@@ -345,17 +326,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/hamzat.jpg" 
@@ -425,17 +396,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 
 ### ⚙️ Pôle Mécanique
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/juste.jpg" 
@@ -503,17 +464,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/martine.jpg" 
@@ -581,17 +532,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/console.jpg" 
@@ -661,17 +602,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
 
 ### 💻 Pôle IT
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/merveille.jpg" 
@@ -739,17 +670,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/jaures.jpg" 
@@ -817,17 +738,7 @@ Nous croyons en la puissance de la collaboration interdisciplinaire pour repouss
   </div>
 </div>
 
-<div style={{
-  display: 'flex', 
-  alignItems: 'flex-start', 
-  marginBottom: '3rem', 
-  padding: '2rem', 
-  backgroundColor: 'var(--ifm-background-surface-color)', 
-  borderRadius: '16px', 
-  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  transition: 'all 0.3s ease'
-}}>
+<div className="team-member-card">
   <div style={{marginRight: '2.5rem', flexShrink: 0}}>
     <img 
       src="/img/team/aboubakar.jpg" 
@@ -936,14 +847,14 @@ Notre équipe suit une approche structurée et collaborative :
 
 ## 📞 Contact et collaboration
 
-<div style={{
+<div className="section" style={{
   background: 'linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%)',
-  borderRadius: '20px',
-  padding: '3rem',
-  margin: '3rem 0',
+  borderRadius: 'var(--border-radius-xl)',
+  padding: 'var(--spacing-2xl)',
+  margin: 'var(--spacing-2xl) 0',
   color: 'white',
   textAlign: 'center',
-  boxShadow: '0 12px 40px rgba(37, 99, 235, 0.3)',
+  boxShadow: 'var(--shadow-xl)',
   position: 'relative',
   overflow: 'hidden'
 }}>

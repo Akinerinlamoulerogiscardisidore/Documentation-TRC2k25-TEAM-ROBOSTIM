@@ -2098,6 +2098,327 @@ body {
   width: 100% !important;
 }
 
+/* ========================================
+   SYSTÈME DE DISPOSITION COHÉRENT
+   ======================================== */
+
+/* Variables pour la disposition */
+:root {
+  /* Espacements cohérents */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Bordures cohérentes */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Ombres cohérentes */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Largeurs de conteneurs */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
+
+/* ========================================
+   DISPOSITION GÉNÉRALE DES PAGES
+   ======================================== */
+
+/* Conteneur principal avec espacement cohérent */
+.main-wrapper {
+  max-width: var(--container-2xl) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--spacing-lg) !important;
+}
+
+/* Pages de documentation avec disposition optimisée */
+.docs-doc-page {
+  max-width: var(--container-2xl) !important;
+  margin: 0 auto !important;
+}
+
+.docs-doc-page .main-wrapper {
+  max-width: var(--container-2xl) !important;
+  padding: 0 var(--spacing-lg) !important;
+}
+
+/* Contenu markdown avec espacement amélioré */
+.markdown {
+  max-width: 100% !important;
+  padding: var(--spacing-xl) 0 !important;
+  line-height: 1.7 !important;
+}
+
+/* ========================================
+   SYSTÈME DE CARTES ET SECTIONS
+   ======================================== */
+
+/* Cartes avec bordures et ombres cohérentes */
+.card,
+.custom-card,
+.feature-card {
+  border-radius: var(--border-radius-lg) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+  box-shadow: var(--shadow-md) !important;
+  padding: var(--spacing-xl) !important;
+  margin-bottom: var(--spacing-lg) !important;
+  background: var(--ifm-background-surface-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+.card:hover,
+.custom-card:hover,
+.feature-card:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Sections avec espacement cohérent */
+.section {
+  padding: var(--spacing-2xl) 0 !important;
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+.section-content {
+  max-width: var(--container-xl) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--spacing-lg) !important;
+}
+
+/* ========================================
+   AMÉLIORATION DES BORDURES
+   ======================================== */
+
+/* Bordures pour les éléments interactifs */
+.button,
+.btn,
+[role="button"] {
+  border-radius: var(--border-radius-md) !important;
+  border: 1px solid transparent !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  transition: all 0.2s ease !important;
+}
+
+.button:hover,
+.btn:hover,
+[role="button"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Bordures pour les inputs et formulaires */
+input,
+textarea,
+select {
+  border-radius: var(--border-radius-md) !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  transition: border-color 0.2s ease !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* ========================================
+   SYSTÈME DE GRILLE AMÉLIORÉ
+   ======================================== */
+
+/* Grille responsive pour les cartes */
+.grid {
+  display: grid !important;
+  gap: var(--spacing-lg) !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* ========================================
+   ESPACEMENTS VERTICAUX COHÉRENTS
+   ======================================== */
+
+/* Espacement entre les sections */
+.section + .section {
+  margin-top: var(--spacing-3xl) !important;
+}
+
+/* Espacement entre les éléments */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-xl) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+p {
+  margin-bottom: var(--spacing-md) !important;
+}
+
+ul, ol {
+  margin-bottom: var(--spacing-md) !important;
+  padding-left: var(--spacing-lg) !important;
+}
+
+li {
+  margin-bottom: var(--spacing-xs) !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN AMÉLIORÉ
+   ======================================== */
+
+/* Mobile First - Disposition pour petits écrans */
+@media (max-width: 768px) {
+  .main-wrapper,
+  .docs-doc-page .main-wrapper {
+    padding: 0 var(--spacing-md) !important;
+  }
+  
+  .card,
+  .custom-card,
+  .feature-card {
+    padding: var(--spacing-lg) !important;
+    margin-bottom: var(--spacing-md) !important;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md) !important;
+  }
+  
+  .section {
+    padding: var(--spacing-lg) 0 !important;
+  }
+  
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.5rem !important; }
+}
+
+/* Tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ========================================
+   AMÉLIORATION DES COMPOSANTS SPÉCIFIQUES
+   ======================================== */
+
+/* Team member cards avec disposition améliorée */
+.team-member-card {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: var(--spacing-lg) !important;
+  padding: var(--spacing-xl) !important;
+  border-radius: var(--border-radius-lg) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+  box-shadow: var(--shadow-md) !important;
+  margin-bottom: var(--spacing-lg) !important;
+  background: var(--ifm-background-surface-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+.team-member-card:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-2px) !important;
+}
+
+.team-member-photo {
+  flex-shrink: 0 !important;
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: var(--border-radius-lg) !important;
+  object-fit: cover !important;
+  border: 2px solid var(--ifm-color-emphasis-200) !important;
+}
+
+.team-member-info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+/* Gallery grid avec disposition améliorée */
+.gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: var(--spacing-lg) !important;
+  padding: var(--spacing-xl) 0 !important;
+}
+
+.gallery-item {
+  border-radius: var(--border-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 0.3s ease !important;
+}
+
+.gallery-item:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* ========================================
+   MODE SOMBRE - AMÉLIORATIONS
+   ======================================== */
+
+[data-theme='dark'] {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .card,
+[data-theme='dark'] .custom-card,
+[data-theme='dark'] .feature-card {
+  background: var(--ifm-background-surface-color) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .team-member-card {
+  background: var(--ifm-background-surface-color) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-content) !important;
+}
+
 /* Force la largeur pour toutes les pages */
 .main-wrapper .navbar {
   max-width: 100vw !important;
