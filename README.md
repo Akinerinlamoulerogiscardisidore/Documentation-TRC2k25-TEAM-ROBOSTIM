@@ -168,3 +168,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ---
 
 **TRC - Team ROBOSTIM** 🤖 | *Innovation robotique et excellence technique*
+=======
+# Documentation-TRC2k25-TEAM-ROBOSTIM
+C'est le site de la documentation officielle de la Team ROBOSTIM du TRC25
+>>>>>>> 9d0ae22ba22f590613ed371bf4ab0c78e7be2a7c
