@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test2
+title: Test 2 — Suivi d'Objets
+sidebar_label: Test 2
+---
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🎯">
+Suivi temps réel d'objets détectés avec corrélateurs et trackers légers.
+</InfoCard>
+
+### Outils
+<Table headers={["Librairie", "Version", "Usage"]}
+  data={[["OpenCV", "4.x", "Tracker KCF/CSRT"],["NumPy", "1.x", "Traitement"],["ONNX Runtime", "1.x", "Inference"]]}
+/>
+
+<FeatureGrid items={[{icon:"⚡", title:"Temps réel", description:"Optimisations"},{icon:"🧪", title:"Datasets", description:"Annotations"},{icon:"🧵", title:"Pipeline", description:"Pré/post-traitements"}]} />
+
+

@@ -1,0 +1,23 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Overview
+title: Aperçu — Pôle Électronique
+sidebar_label: Overview
+---
+
+## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+
+<InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
+Structure pour les tests d’électronique: capteurs, bus I2C/SPI, actionneurs, PCB.
+</InfoCard>
+
+### Sommaire
+<Table headers={["Section", "Description"]}
+  data={[["Test 1", "Capteurs Inertiels (MPU6050)"],["Test 2", "Acquisition et Filtrage IMU"],["Test 3", "Contrôle Servomoteurs (PCA9685)"]]} />
+
+<FeatureGrid items={[{icon:"🧭", title:"Capteurs", description:"IMU, encoders, etc."},{icon:"🔗", title:"Bus", description:"I2C, SPI, UART"},{icon:"🧰", title:"Actionneurs", description:"Servos, moteurs"}]} />
+
+

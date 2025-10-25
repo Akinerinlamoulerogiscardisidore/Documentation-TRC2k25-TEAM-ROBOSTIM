@@ -1,0 +1,23 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Overview
+title: Aperçu — Pôle Mécanique
+sidebar_label: Overview
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
+Structure pour les tests mécaniques: châssis, transmission, intégration mécatronique.
+</InfoCard>
+
+### Sommaire
+<Table headers={["Section", "Description"]}
+  data={[["Test 1", "Afficheur 7 segments mécanique"],["Test 2", "Châssis et Transmission"],["Test 3", "Intégration Mécatronique"]]} />
+
+<FeatureGrid items={[{icon:"📐", title:"CAO", description:"Conception & tolérances"},{icon:"⚙️", title:"Cinématique", description:"Mouvements & efforts"},{icon:"🧱", title:"Matériaux", description:"PLA/PETG/Alu"}]} />
+
+

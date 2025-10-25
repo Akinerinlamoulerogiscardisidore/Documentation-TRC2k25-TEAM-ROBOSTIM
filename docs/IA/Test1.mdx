@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test1
+title: Test 1 — IA (Vision et Classification)
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="📷">
+Détection/Classification d'objets via un modèle léger et pipeline Python.
+</InfoCard>
+
+### Outils
+<Table headers={["Librairie", "Version", "Usage"]}
+  data={[["PyTorch", "2.x", "Entraînement/Inference"],["OpenCV", "4.x", "Prétraitement"],["ONNX Runtime", "1.x", "Déploiement"]]}
+/>
+
+<FeatureGrid items={[{icon:"⚡", title:"Temps réel", description:"Optimisations CPU/GPU"},{icon:"🧪", title:"Datasets", description:"Split train/val/test"},{icon:"📦", title:"Export", description:"ONNX/TensorRT"}]} />
+
+

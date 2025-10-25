@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test3
+title: Test 3 — Intégration Mécatronique
+sidebar_label: Test 3
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🧩">
+Intégration structure + actionneurs + électronique dans un prototype fonctionnel.
+</InfoCard>
+
+### Éléments
+<Table headers={["Sous-système", "Composants", "Rôle"]}
+  data={[["Structure", "Châssis/Support", "Rigidité"],["Actionnement", "Servos/Moteurs", "Mouvement"],["Électronique", "MCU/PCA9685", "Commande"]]}
+/>
+
+<FeatureGrid items={[{icon:"🔧", title:"Montage", description:"Méthode et ordre"},{icon:"🧪", title:"Tests", description:"Validation fonctionnelle"},{icon:"📦", title:"Boîtiers", description:"Protection et maintenance"}]} />
+
+

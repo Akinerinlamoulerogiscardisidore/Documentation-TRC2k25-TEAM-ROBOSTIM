@@ -1,0 +1,67 @@
+.stepCard {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3b82f6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.stepNumber {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.stepIcon {
+  font-size: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.stepContent {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.stepContent p {
+  margin: 0 0 10px 0;
+}
+
+.stepContent ul, .stepContent ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.stepContent li {
+  margin: 5px 0;
+}

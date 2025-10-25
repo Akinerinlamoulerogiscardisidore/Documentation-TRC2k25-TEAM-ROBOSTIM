@@ -1,0 +1,66 @@
+import InfoCard from '@site/src/components/InfoCard';
+import CodeBlock from '@site/src/components/CodeBlock';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import StepCard from '@site/src/components/StepCard';
+import Table from '@site/src/components/Table';
+import Link from '@docusaurus/Link';
+
+<div className="section-banner-mecanique">
+  <div className="container">
+    <h1 className="banner-title">Test Mécanique 1 : Introduction</h1>
+    <p className="banner-description">Structures, cinématique et intégration mécanique du TRC</p>
+    <div className="banner-actions">
+      <Link className="button button--primary" to="#introduction">Commencer la lecture</Link>
+      <Link className="button button--secondary" to="#ressources">Voir la démo</Link>
+    </div>
+  </div>
+  <div className="section-accent-mecanique" />
+  
+</div>
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<FeatureGrid
+  items={[
+    { icon: '🧩', title: 'Assemblage', description: 'Organisation des sous-systèmes mécaniques' },
+    { icon: '⚙️', title: 'Cinématique', description: 'Mouvements et liaisons mécaniques' },
+    { icon: '📐', title: 'Tolérances', description: 'Précision d’usinage et montage' },
+  ]}
+/>
+
+### Introduction {/** anchor */}
+<InfoCard type="info" title="Objectifs" icon="🎯">
+Définir l’architecture mécanique de base et les critères de montage pour les tests.
+</InfoCard>
+
+### Liste du matériel
+<Table
+  headers={["Composant", "Spécifications", "Rôle"]}
+  data={[
+    ["Châssis imprimé 3D", "PLA/PETG", "Support structurel"],
+    ["Visserie M3/M4", "Acier", "Assemblage"],
+    ["Roulements", "608ZZ", "Réduction frottements"],
+  ]}
+/>
+
+### Étapes de réalisation
+<StepCard
+  steps={[
+    { title: 'Préparation', description: 'Inventaire, contrôle des pièces.' },
+    { title: 'Montage', description: 'Assemblage progressif, vérification jeux.' },
+    { title: 'Validation', description: 'Test des mouvements et alignements.' },
+  ]}
+/>
+
+### Notes techniques
+<InfoCard type="tip" title="Bonnes pratiques" icon="🧠">
+Respecter les couples de serrage, éviter les contraintes parasites, contrôler le parallélisme.
+</InfoCard>
+
+### Ressources et liens utiles {/** id=ressources */}
+<InfoCard type="info" title="Ressources" icon="📁">
+- Schémas mécaniques (à venir)
+- Médias de démonstration (à venir)
+</InfoCard>
+
+

@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test1
+title: Test 1 — Capteurs Inertiels (MPU6050)
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🧭">
+Mesure d'orientation (roll/pitch/yaw) via le capteur MPU6050 et bus I2C.
+</InfoCard>
+
+### Matériel
+<Table headers={["Composant", "Référence", "Rôle"]}
+  data={[["MPU6050", "GY-521", "Accéléromètre/Gyro"],["ATmega328P", "Arduino-compatible", "Microcontrôleur"],["LCD 16x2", "HD44780", "Affichage"]]}
+/>
+
+<FeatureGrid items={[{icon:"⚙️", title:"I2C", description:"Communication avec capteur"},{icon:"📊", title:"Filtrage", description:"Lissage des mesures"},{icon:"🧪", title:"Démos", description:"Exemples d'utilisation"}]} />
+
+

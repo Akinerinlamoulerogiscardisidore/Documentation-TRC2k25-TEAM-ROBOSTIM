@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test1
+title: Test 1 — Mécanique (Afficheur 7 segments)
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="⚙️">
+Conception et fabrication d'un afficheur 7 segments mécanique via servomoteurs.
+</InfoCard>
+
+### Matériel
+<Table headers={["Élément", "Référence", "Rôle"]}
+  data={[["Servomoteurs", "SG90 / MG996R", "Actionnement"],["PCA9685", "16 ch PWM", "Contrôle"],["Structure 3D", "PLA/PETG", "Support"]]}
+/>
+
+<FeatureGrid items={[{icon:"🧩", title:"Assemblage", description:"Montage modulaire"},{icon:"📐", title:"Cinématique", description:"Contraintes et tolérances"},{icon:"🔧", title:"Maintenance", description:"Remplacement rapide"}]} />
+
+

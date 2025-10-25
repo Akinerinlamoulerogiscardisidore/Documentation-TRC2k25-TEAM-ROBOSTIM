@@ -1,0 +1,24 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Test1
+title: Test 1 — ROS 2 (Capteurs et Topics)
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🛰️">
+Publication/Subscription de données capteurs, visualisation dans RViz2, enregistrement rosbag.
+</InfoCard>
+
+### Nœuds et topics
+<Table headers={["Nœud", "Topic", "Type"]}
+  data={[["imu_node", "/imu/data", "sensor_msgs/Imu"],["odom_node", "/odom", "nav_msgs/Odometry"],["viz", "/tf", "tf2_msgs/TFMessage"]]}
+/>
+
+<FeatureGrid items={[{icon:"📡", title:"DDS", description:"Middleware de communication"},{icon:"🗺️", title:"RViz2", description:"Visualisation 3D"},{icon:"💾", title:"rosbag2", description:"Capture de données"}]} />
+
+
