@@ -6,6 +6,8 @@ module.exports = {
   baseUrl: '/Documentation-TRC2k25-TEAM-ROBOSTIM/',
   organizationName: 'akinerinlamoulerogiscardisidore',
   projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
   favicon: 'img/favicon.ico',
 
   // Configuration corrigée pour le mode sombre
