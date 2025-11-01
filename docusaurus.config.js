@@ -2,9 +2,9 @@
 module.exports = {
   title: 'TRC Challenge - Team ROBOSTIM',
   tagline: '',
-  url: 'https://Akinerinlamoulerogiscardisidore.github.io',
+  url: 'https://akinerinlamoulerogiscardisidore.github.io',
   baseUrl: '/Documentation-TRC2k25-TEAM-ROBOSTIM/',
-  organizationName: 'Akinerinlamoulerogiscardisidore',
+  organizationName: 'akinerinlamoulerogiscardisidore',
   projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
   favicon: 'img/favicon.ico',
 
