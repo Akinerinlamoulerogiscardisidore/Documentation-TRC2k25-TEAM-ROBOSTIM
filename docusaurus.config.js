@@ -1,14 +1,25 @@
 // docusaurus.config.js
+// docusaurus.config.js
 module.exports = {
   title: 'TRC Challenge - Team ROBOSTIM',
   tagline: '',
-  url: 'https://tekbot-robotics-challenge.github.io',
-  baseUrl: '/2025-Team-Club_de_Robotique_et_Automatisation-Docs/',
-  organizationName: 'TekBot-Robotics-Challenge',
-  projectName: '2025-Team-Club_de_Robotique_et_Automatisation-Docs',
+
+  // ✅ URL GitHub Pages PERSONNELLE
+  url: 'https://akinerinlamoulerogiscardisidore.github.io',
+
+  // ✅ NOM EXACT DU REPO
+  baseUrl: '/Documentation-TRC2k25-TEAM-ROBOSTIM/',
+
+  // ✅ TON COMPTE GITHUB
+  organizationName: 'Akinerinlamoulerogiscardisidore',
+
+  // ✅ NOM EXACT DU REPO
+  projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
+
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
   favicon: 'img/favicon.ico',
+
   
   // Configuration pour GitHub Pages
   onBrokenLinks: 'warn',
@@ -60,7 +71,7 @@ module.exports = {
           position: 'right'
         },
         {
-          href: 'https://github.com/TekBot-Robotics-Challenge/2025-Team-Club_de_Robotique_et_Automatisation-Docs',
+          href: 'https://github.com/Akinerinlamoulerogiscardisidore/Documentation-TRC2k25-TEAM-ROBOSTIM',
           position: 'right',
           className: 'header-github-link',
           label: 'GitHub',
