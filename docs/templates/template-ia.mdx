@@ -1,0 +1,418 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: template-ia
+title: Template Documentation IA
+sidebar_label: Template IA
+---
+
+# 🧠 Template de Documentation Technique - Pôle IA
+
+> **📋 Guide d'utilisation** : Ce template vous aide à créer une documentation technique complète pour les tests et développements en Intelligence Artificielle. Copiez ce fichier et remplissez les sections selon vos besoins.
+
+---
+
+## 📝 Structure du Document
+
+### 1. Imports nécessaires (en haut du fichier)
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+```
+
+### 2. Frontmatter (métadonnées)
+```markdown
+---
+id: nom-du-test
+title: Nom du Test - Description
+sidebar_label: Nom court
+---
+```
+
+---
+
+## 📖 Exemple Complet de Documentation
+
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: test-detection-objets
+title: Test Détection d'Objets avec YOLO
+sidebar_label: Test YOLO
+---
+
+# 🧠 Test Détection d'Objets avec YOLO
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="📷">
+Implémentation et validation d'un modèle de détection d'objets en temps réel utilisant YOLOv8 pour la reconnaissance d'objets sur le robot.
+</InfoCard>
+
+## 📋 Objectif du test
+
+Décrire l'objectif principal du test IA.
+
+**Exemple** :
+Valider la performance d'un modèle de détection d'objets YOLOv8 pour identifier et localiser des objets dans l'environnement du robot en temps réel.
+
+## 🎯 Critères de réussite
+
+- **Précision (mAP)** : >80% sur le dataset de test
+- **Temps d'inférence** : <50ms par image
+- **Taux de détection** : >90% pour les objets cibles
+- **Faux positifs** : <5%
+
+## 🛠️ Matériel et Logiciel requis
+
+### Matériel
+- **GPU** : NVIDIA GTX 1060 ou supérieur (optionnel pour entraînement)
+- **CPU** : Intel i5 ou équivalent
+- **RAM** : 8GB minimum, 16GB recommandé
+- **Caméra** : USB 3.0 ou caméra Raspberry Pi
+
+### Logiciel
+- **Python** : 3.8+
+- **PyTorch** : 2.0+
+- **OpenCV** : 4.5+
+- **Ultralytics YOLO** : 8.0+
+- **ONNX Runtime** : 1.15+ (pour déploiement)
+
+## 📊 Architecture du Modèle
+
+### Pipeline de traitement
+
+<FeatureGrid items={[
+  {icon:"📷", title:"Capture", description:"Acquisition d'image depuis la caméra"},
+  {icon:"🔄", title:"Prétraitement", description:"Redimensionnement et normalisation"},
+  {icon:"🧠", title:"Inférence", description:"Prédiction avec le modèle YOLO"},
+  {icon:"📊", title:"Post-traitement", description:"Filtrage et visualisation des résultats"}
+]} />
+
+### Outils et Librairies
+
+<Table headers={["Librairie", "Version", "Usage"]}
+  data={[
+    ["PyTorch", "2.0+", "Entraînement et inférence"],
+    ["OpenCV", "4.5+", "Traitement d'images"],
+    ["Ultralytics", "8.0+", "Modèle YOLO"],
+    ["ONNX Runtime", "1.15+", "Déploiement optimisé"],
+    ["NumPy", "1.24+", "Calculs numériques"]
+  ]}
+/>
+
+## 📊 Procédure de test
+
+### Étape 1 : Installation des dépendances
+
+```bash
+# Créer un environnement virtuel
+python -m venv venv
+source venv/bin/activate  # Sur Windows: venv\Scripts\activate
+
+# Installer les dépendances
+pip install torch torchvision
+pip install ultralytics
+pip install opencv-python
+pip install onnxruntime
+pip install numpy
+```
+
+### Étape 2 : Préparation du dataset
+
+```python
+# Structure du dataset
+dataset/
+├── train/
+│   ├── images/
+│   └── labels/
+├── val/
+│   ├── images/
+│   └── labels/
+└── test/
+    ├── images/
+    └── labels/
+```
+
+**Script de préparation** :
+```python
+from pathlib import Path
+import shutil
+
+def prepare_dataset(source_dir, target_dir):
+    """Organise le dataset pour YOLO"""
+    for split in ['train', 'val', 'test']:
+        (target_dir / split / 'images').mkdir(parents=True, exist_ok=True)
+        (target_dir / split / 'labels').mkdir(parents=True, exist_ok=True)
+    
+    # Copier les fichiers selon votre logique
+    # ...
+```
+
+### Étape 3 : Entraînement du modèle
+
+```python
+from ultralytics import YOLO
+
+# Charger un modèle pré-entraîné
+model = YOLO('yolov8n.pt')  # nano version pour vitesse
+
+# Entraîner le modèle
+results = model.train(
+    data='dataset.yaml',
+    epochs=100,
+    imgsz=640,
+    batch=16,
+    device='cuda'  # ou 'cpu'
+)
+```
+
+### Étape 4 : Évaluation du modèle
+
+```python
+# Évaluer sur le dataset de test
+metrics = model.val(data='dataset.yaml')
+
+print(f"mAP50: {metrics.box.map50}")
+print(f"mAP50-95: {metrics.box.map}")
+print(f"Precision: {metrics.box.mp}")
+print(f"Recall: {metrics.box.mr}")
+```
+
+### Étape 5 : Test en temps réel
+
+```python
+import cv2
+from ultralytics import YOLO
+
+# Charger le modèle entraîné
+model = YOLO('best.pt')
+
+# Capturer depuis la caméra
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    
+    # Inférence
+    results = model(frame)
+    
+    # Visualiser les résultats
+    annotated_frame = results[0].plot()
+    cv2.imshow('YOLO Detection', annotated_frame)
+    
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+## 📈 Résultats attendus
+
+### Métriques de performance
+
+<Table headers={["Métrique", "Valeur cible", "Valeur mesurée", "Statut"]}
+  data={[
+    ["mAP@0.5", ">80%", "82.5%", "✅"],
+    ["mAP@0.5:0.95", ">60%", "65.3%", "✅"],
+    ["Temps inférence (CPU)", "<100ms", "85ms", "✅"],
+    ["Temps inférence (GPU)", "<50ms", "35ms", "✅"],
+    ["FPS", ">10", "12", "✅"]
+  ]}
+/>
+
+### Matrice de confusion
+
+**Exemple de visualisation** :
+```python
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Calculer la matrice de confusion
+cm = confusion_matrix(y_true, y_pred)
+
+# Visualiser
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.title('Matrice de confusion')
+plt.ylabel('Vraies classes')
+plt.xlabel('Classes prédites')
+plt.show()
+```
+
+## 🔍 Validation des résultats
+
+### Analyse des performances
+
+**Script d'analyse** :
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Données de test
+epochs = np.arange(1, 101)
+train_loss = np.load('train_loss.npy')
+val_loss = np.load('val_loss.npy')
+map_scores = np.load('map_scores.npy')
+
+# Graphique de la perte
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(epochs, train_loss, label='Train Loss')
+plt.plot(epochs, val_loss, label='Validation Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.title('Évolution de la perte')
+plt.legend()
+plt.grid(True)
+
+# Graphique du mAP
+plt.subplot(1, 2, 2)
+plt.plot(epochs, map_scores)
+plt.xlabel('Epochs')
+plt.ylabel('mAP@0.5')
+plt.title('Évolution de la précision')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+## 🚨 Dépannage
+
+### Problèmes courants
+
+#### 1. Modèle ne converge pas
+- Vérifier la qualité du dataset
+- Ajuster le learning rate
+- Vérifier l'augmentation de données
+- Contrôler le batch size
+
+#### 2. Temps d'inférence trop lent
+```python
+# Optimiser avec ONNX
+from ultralytics import YOLO
+
+model = YOLO('best.pt')
+model.export(format='onnx', simplify=True)
+
+# Utiliser ONNX Runtime
+import onnxruntime as ort
+session = ort.InferenceSession('best.onnx')
+```
+
+#### 3. Faux positifs élevés
+- Augmenter le seuil de confiance
+- Améliorer le dataset d'entraînement
+- Utiliser data augmentation
+- Ajuster les hyperparamètres
+
+### Commandes de diagnostic
+
+```python
+# Vérifier les performances du modèle
+model.info()
+
+# Tester sur une image
+results = model('test_image.jpg')
+results[0].show()
+
+# Exporter les résultats
+results[0].save('output.jpg')
+```
+
+## 📝 Rapport de test
+
+### Résumé des performances
+- **Durée d'entraînement** : [X] heures
+- **Nombre d'époques** : [X]
+- **Taille du dataset** : [X] images
+- **mAP final** : [X]%
+- **Temps d'inférence moyen** : [X]ms
+
+### Recommandations
+1. **Optimisation** : Convertir en ONNX pour déploiement
+2. **Amélioration** : Augmenter la taille du dataset
+3. **Monitoring** : Surveiller la dérive du modèle
+4. **Mise à jour** : Réentraîner régulièrement avec de nouvelles données
+
+## 🔄 Tests de suivi
+
+### Scénarios de test
+- Test sur images statiques
+- Test en temps réel avec caméra
+- Test de robustesse (éclairage variable)
+- Test de généralisation (nouvelles scènes)
+
+### Métriques à surveiller
+- Précision (mAP)
+- Temps d'inférence
+- Taux de faux positifs
+- Utilisation mémoire/GPU
+
+---
+
+## 📸 Ajout d'images et visualisations
+
+Pour ajouter des images, placez-les dans `static/img/` :
+
+```markdown
+![Résultats de détection](/img/yolo-detection-results.png)
+![Courbe d'entraînement](/img/training-curves.png)
+![Matrice de confusion](/img/confusion-matrix.png)
+```
+
+## 🔗 Liens utiles
+
+- [Documentation Ultralytics YOLO](https://docs.ultralytics.com/)
+- [PyTorch Documentation](https://pytorch.org/docs/)
+- [OpenCV Tutorials](https://docs.opencv.org/)
+- [ONNX Runtime](https://onnxruntime.ai/)
+
+---
+
+## 💡 Composants React disponibles
+
+### InfoCard
+```jsx
+<InfoCard type="info" title="Titre" icon="📷">
+Contenu de la carte d'information
+</InfoCard>
+```
+
+Types disponibles : `info`, `warning`, `success`, `danger`
+
+### FeatureGrid
+```jsx
+<FeatureGrid items={[
+  {icon:"📷", title:"Titre 1", description:"Description 1"},
+  {icon:"🧠", title:"Titre 2", description:"Description 2"}
+]} />
+```
+
+### Table
+```jsx
+<Table headers={["Métrique", "Valeur"]}
+  data={[
+    ["mAP@0.5", "82.5%"],
+    ["FPS", "12"]
+  ]}
+/>
+```
+
+---
+
+*Template créé le : [Date]*
+*Dernière mise à jour : [Date]*
+*Statut : ✅ Template prêt à l'emploi*

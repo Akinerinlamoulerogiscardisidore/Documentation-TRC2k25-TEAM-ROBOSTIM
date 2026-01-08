@@ -1,0 +1,52 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: IA/Test2
+title: 'Test 2 — Introduction à ROS 2'
+sidebar_label: Test 2
+---
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🛰️">
+Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2, création de nœuds, publication/abonnement de topics, et utilisation des services.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des systèmes robotiques distribués. Vous devrez créer des nœuds ROS 2 capables de communiquer via topics et services.
+
+### Concepts ROS 2
+
+<FeatureGrid items={[
+  {icon:"📡", title:"Topics", description:"Publication/Subscription"},
+  {icon:"🔧", title:"Services", description:"Requête/Réponse"},
+  {icon:"🗺️", title:"TF", description:"Transformations"},
+  {icon:"📦", title:"Packages", description:"Organisation"},
+  {icon:"🛠️", title:"Nodes", description:"Processus ROS 2"}
+]} />
+
+### Nœuds à créer
+
+<Table headers={["Nœud", "Topic/Service", "Type", "Description"]}
+  data={[
+    ["publisher_node", "/chatter", "std_msgs/String", "Publication"],
+    ["subscriber_node", "/chatter", "std_msgs/String", "Réception"],
+    ["service_server", "/add_two_ints", "example_interfaces/AddTwoInts", "Service"],
+    ["service_client", "/add_two_ints", "example_interfaces/AddTwoInts", "Client"]
+  ]}
+/>
+
+### Critères de notation (100 points)
+
+1. **Compréhension (25 points)** : Maîtrise des concepts ROS 2
+2. **Implémentation (40 points)** : Nœuds fonctionnels
+3. **Documentation (20 points)** : README, commentaires
+4. **Tests (10 points)** : Validation
+5. **Présentation (5 points)** : Démonstration
+
+---
+
+*Pour plus de détails, consultez la documentation ROS 2 officielle.*

@@ -1,0 +1,167 @@
+/* src/pages/index.css */
+/* Styles personnalisés pour la page d'accueil */
+
+/* Animations d'entrée */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Styles des sections */
+.section--odd {
+  padding: 5rem 0;
+  background-color: var(--ifm-background-color);
+}
+
+.section--even {
+  padding: 5rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.section__title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.section__subtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 2rem;
+}
+
+.section__content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Cartes de l'équipe */
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
+}
+
+.team-members {
+  color: var(--ifm-color-primary);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Badges */
+.badges {
+  margin-top: 1.5rem;
+}
+
+.badge {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+/* Boutons CTA */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button--light {
+  background-color: white;
+  color: var(--ifm-color-primary);
+}
+
+.button--light:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .section__title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 996px) {
+  .section__title {
+    font-size: 2rem;
+  }
+  
+  .section__subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section__content {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons .button {
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .section--odd,
+  .section--even {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__title {
+    font-size: 1.75rem;
+  }
+  
+  .section__subtitle {
+    font-size: 1rem;
+  }
+  
+  .section__content {
+    font-size: 0.95rem;
+  }
+  
+  .section--odd,
+  .section--even {
+    padding: 2.5rem 0;
+  }
+  
+  .team-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section__title {
+    font-size: 1.5rem;
+  }
+  
+  .section__subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .section__content {
+    font-size: 0.9rem;
+  }
+  
+  .section--odd,
+  .section--even {
+    padding: 2rem 0;
+  }
+}

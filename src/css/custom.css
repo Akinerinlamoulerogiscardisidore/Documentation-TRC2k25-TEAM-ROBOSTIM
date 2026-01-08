@@ -1,0 +1,2540 @@
+/* src/css/custom.css */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
+
+/* Variables CSS pour une gestion cohérente des couleurs */
+:root {
+  /* Typographie professionnelle pour documentation technique */
+  --ifm-font-family-base: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-heading-font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: 'Source Code Pro', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  
+  /* Tailles de police optimisées pour la documentation */
+  --ifm-font-size-base: 1.1rem;
+  --ifm-line-height-base: 1.7;
+  
+  /* Tailles de police pour les titres */
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1.125rem;
+  --ifm-h6-font-size: 1rem;
+  
+  /* Espacement des titres */
+  --ifm-heading-margin-top: 2rem;
+  --ifm-heading-margin-bottom: 1rem;
+  --ifm-heading-font-weight: 600;
+
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+
+  --text-color: #111111; /* Couleur texte principale */
+  --text-secondary: #4b5563; /* Couleur texte secondaire */
+  --bg-color: #ffffff; /* Fond principal */
+  --surface-color: #f8fafc; /* Fond des cartes / surfaces */
+
+  /* Couleurs par pôle */
+  --color-electronique: #0ea5e9; /* cyan */
+  --color-it: #8b5cf6;         /* violet */
+  --color-mecanique: #ef4444;   /* rouge */
+}
+
+/* Mode Sombre */
+[data-theme='dark'] {
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #bfdbfe;
+  
+  --ifm-background-color: #1a1a1a;
+  --ifm-background-surface-color: #2d2d2d;
+
+  --text-color: #f9f9f9;
+  --text-secondary: #d1d5db;
+  --bg-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+}
+
+/* Typographie professionnelle pour la documentation */
+body {
+  font-family: var(--ifm-font-family-base);
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  font-weight: 400;
+  color: var(--ifm-color-content);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Augmentation légère de la taille de police pour le contenu */
+p, li, td, th, span, div {
+  font-size: 1.1rem !important;
+}
+
+/* Amélioration des titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: 1.3;
+  margin-top: var(--ifm-heading-margin-top);
+  margin-bottom: var(--ifm-heading-margin-bottom);
+  color: var(--ifm-color-content);
+}
+
+h1 {
+  font-size: var(--ifm-h1-font-size);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: var(--ifm-h2-font-size);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: var(--ifm-h3-font-size);
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+h4 {
+  font-size: var(--ifm-h4-font-size);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: var(--ifm-h5-font-size);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--ifm-h6-font-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Amélioration des paragraphes */
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ifm-color-content);
+}
+
+/* Amélioration des listes */
+ul, ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Amélioration des blocs de code */
+code {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: var(--ifm-color-primary);
+}
+
+pre {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+}
+
+/* Amélioration des tableaux */
+table {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+th {
+  font-weight: 600;
+  text-align: left;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Amélioration des citations */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Amélioration des liens */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Amélioration de la navigation */
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Amélioration des cartes */
+.card {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+/* Amélioration des badges */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Amélioration des boutons */
+.button {
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Amélioration de la sidebar */
+.menu__link {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+/* Amélioration du contenu de documentation */
+.markdown {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+.markdown h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ifm-color-content);
+}
+
+.markdown h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ifm-color-content);
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.markdown h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.markdown h5 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.markdown h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Amélioration des paragraphes dans la documentation */
+.markdown p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ifm-color-content);
+}
+
+/* Amélioration des listes dans la documentation */
+.markdown ul, .markdown ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.markdown li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Amélioration des blocs de code dans la documentation */
+.markdown code {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown pre {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.markdown pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  border: none;
+  font-size: 0.875rem;
+}
+
+/* Amélioration des tableaux dans la documentation */
+.markdown table {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.markdown th {
+  font-weight: 600;
+  text-align: left;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 1rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  font-size: 0.875rem;
+}
+
+.markdown td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.875rem;
+}
+
+/* Amélioration des citations dans la documentation */
+.markdown blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: var(--ifm-color-content-secondary);
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Amélioration des liens dans la documentation */
+.markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+/* Amélioration des alertes dans la documentation */
+.markdown .alert {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.markdown .alert__title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Amélioration des badges dans la documentation */
+.markdown .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+/* Amélioration des boutons dans la documentation */
+.markdown .button {
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Amélioration des cartes dans la documentation */
+.markdown .card {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown .card__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Amélioration des sections de documentation technique */
+.markdown .tech-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.markdown .tech-section h3 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+}
+
+/* Amélioration des procédures de test */
+.markdown .test-procedure {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--color-electronique);
+}
+
+.markdown .test-procedure h4 {
+  color: var(--color-electronique);
+  margin-top: 0;
+}
+
+/* Amélioration des résultats de test */
+.markdown .test-results {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--color-mecanique);
+}
+
+.markdown .test-results h4 {
+  color: var(--color-mecanique);
+  margin-top: 0;
+}
+
+/* Amélioration des dépannages */
+.markdown .troubleshooting {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--color-it);
+}
+
+.markdown .troubleshooting h4 {
+  color: var(--color-it);
+  margin-top: 0;
+}
+
+/* Amélioration des alertes */
+.alert {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.alert__title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --ifm-font-size-base: 1.05rem;
+    --ifm-h1-font-size: 2rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.375rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+  
+  p, li, td, th, span, div {
+    font-size: 1.05rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --ifm-font-size-base: 1rem;
+    --ifm-h1-font-size: 1.75rem;
+    --ifm-h2-font-size: 1.5rem;
+    --ifm-h3-font-size: 1.25rem;
+  }
+  
+  p, li, td, th, span, div {
+    font-size: 1rem !important;
+  }
+}
+
+/* Navbar - Support mode sombre/clair */
+.navbar {
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton mode sombre/clair */
+.colorModeToggle {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 20px;
+  padding: 4px;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .colorModeToggle {
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+/* Hero Section avec support mode sombre */
+.hero-section {
+  background: linear-gradient(135deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary) 50%, var(--ifm-color-primary-light) 100%);
+  color: white;
+}
+
+/* Cartes avec support mode sombre */
+.custom-card {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Boutons avec support mode sombre */
+.custom-button {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: white;
+}
+
+/* Statistiques avec support mode sombre */
+.stat-number {
+  color: var(--ifm-color-primary);
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.stat-label {
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+[data-theme='dark'] .stat-label {
+  color: var(--ifm-color-emphasis-400);
+}
+
+/* src/css/custom.css */
+
+/* Effets Hover pour les boutons Hero */
+.hero-btn-primary {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #1e40af !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 1.2rem 2.5rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+  font-size: 1.1rem !important;
+  transition: all 0.3s ease !important;
+  transform: translateY(0) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hero-btn-primary:hover {
+  background-color: #1e40af !important;
+  color: white !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-btn-outline {
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 1.2rem 2.5rem !important;
+  /*backdrop-filter: blur(10px) !important;/*/
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  transition: all 0.3s ease !important;
+  transform: translateY(0) !important;
+  position: relative !important;
+}
+
+.hero-btn-outline:hover {
+  background-color: white !important;
+  color: #1e40af !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3) !important;
+  border-color: white !important;
+}
+
+/* Effets pour les cartes features */
+.feature-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: var(--ifm-color-content);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: var(--ifm-background-color);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+/* Effet pour le bouton final */
+.final-cta-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  
+}
+
+.final-cta-btn:hover {
+
+  background-color: #1e40af;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+/* Supprimer les soulignements des boutons */
+.hero-btn-primary,
+.hero-btn-outline,
+.final-cta-btn {
+  text-decoration: none !important;
+}
+
+/* Supprimer le soulignement au hover aussi */
+.hero-btn-primary:hover,
+.hero-btn-outline:hover,
+.final-cta-btn:hover {
+  text-decoration: none !important;
+}
+
+/* Supprimer les soulignements pour tous les liens dans les boutons */
+.hero-btn-primary a,
+.hero-btn-outline a,
+.final-cta-btn a {
+  text-decoration: none !important;
+}
+
+/* Assurer que le texte reste blanc au hover pour le bouton outline */
+.hero-btn-outline:hover {
+  color: #1e40af !important;
+  text-decoration: none !important;
+}
+
+
+.hero-section {
+  background: linear-gradient(135deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary) 50%, var(--ifm-color-primary-light) 100%);
+  color: var(--text-color); /* au lieu de white */
+}
+
+.custom-card {
+  background-color: var(--surface-color); /* déjà dynamique */
+  color: var(--text-color);
+}
+
+.hero-btn-primary,
+.hero-btn-outline,
+.final-cta-btn {
+  color: var(--text-color); /* remplace white */
+}
+
+a {
+  color: var(--text-color);
+}
+
+[data-theme='dark'] a {
+  color: var(--text-color);
+}
+
+/* Styles pour les composants MDX personnalisés */
+.badge-sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badge-electronique { color: var(--color-electronique); border-color: var(--color-electronique); background: color-mix(in srgb, var(--color-electronique) 12%, white); }
+.badge-it { color: var(--color-it); border-color: var(--color-it); background: color-mix(in srgb, var(--color-it) 12%, white); }
+.badge-mecanique { color: var(--color-mecanique); border-color: var(--color-mecanique); background: color-mix(in srgb, var(--color-mecanique) 12%, white); }
+
+.section-accent-electronique { border-left: 4px solid var(--color-electronique); padding-left: 1rem; }
+.section-accent-it { border-left: 4px solid var(--color-it); padding-left: 1rem; }
+.section-accent-mecanique { border-left: 4px solid var(--color-mecanique); padding-left: 1rem; }
+
+.card-accent-electronique { box-shadow: 0 8px 30px color-mix(in srgb, var(--color-electronique) 20%, transparent); }
+.card-accent-it { box-shadow: 0 8px 30px color-mix(in srgb, var(--color-it) 20%, transparent); }
+.card-accent-mecanique { box-shadow: 0 8px 30px color-mix(in srgb, var(--color-mecanique) 20%, transparent); }
+
+/* Amélioration des titres */
+.markdown h1 {
+  color: var(--ifm-color-primary);
+  border-bottom: 3px solid var(--ifm-color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.markdown h2 {
+  color: var(--ifm-color-primary-dark);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.markdown h2::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: var(--ifm-color-primary);
+  border-radius: 2px;
+}
+
+.markdown h3 {
+  color: var(--ifm-color-primary-darker);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Amélioration des listes */
+.markdown ul, .markdown ol {
+  margin: 1.25rem 0 1.5rem 0;
+  padding-left: 1.75rem;
+}
+
+.markdown li {
+  margin: 0.6rem 0;
+  line-height: 1.6;
+}
+
+/* Puces stylisées pour améliorer la lisibilité des listes de matériel */
+.markdown ul > li::marker {
+  color: var(--ifm-color-primary);
+}
+
+.markdown ol > li::marker {
+  color: var(--ifm-color-primary-dark);
+  font-weight: 600;
+}
+
+/* Amélioration des paragraphes */
+.markdown p {
+  line-height: var(--ifm-line-height-base);
+  margin: 1rem 0;
+  color: var(--ifm-color-content);
+}
+
+/* Amélioration de la hiérarchie typographique */
+.markdown h1 { font-weight: 800; letter-spacing: -0.02em; }
+.markdown h2 { font-weight: 700; letter-spacing: -0.01em; }
+.markdown h3 { font-weight: 600; }
+
+/* Taille des titres harmonisée */
+:root {
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.35rem;
+}
+
+.markdown h1 { font-size: var(--ifm-h1-font-size); }
+.markdown h2 { font-size: var(--ifm-h2-font-size); }
+.markdown h3 { font-size: var(--ifm-h3-font-size); }
+
+/* Lissage police */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--ifm-font-family-base); }
+
+/* Styles pour les liens */
+.markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+/* Amélioration des blocs de code inline */
+.markdown code {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+[data-theme='dark'] .markdown code {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+/* Styles pour les tableaux */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.markdown th {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.markdown td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--ifm-background-color);
+}
+
+.markdown tr:nth-child(even) td {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.markdown tr:hover td {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Styles pour les citations */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+/* Amélioration de l'espacement général */
+.markdown > *:first-child {
+  margin-top: 0;
+}
+
+.markdown > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Styles pour les sections avec des composants */
+.markdown section {
+  margin: 2rem 0;
+}
+
+/* Images d'équipe - Version originale sans filtres */
+img[src*="/img/team/"] {
+  image-rendering: auto;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-transform: none;
+  transform: none;
+  will-change: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  filter: none;
+  -webkit-filter: none;
+  -webkit-perspective: none;
+  perspective: none;
+  -webkit-transform-style: flat;
+  transform-style: flat;
+  -webkit-image-rendering: auto;
+  -webkit-shape-image-threshold: 0;
+  shape-image-threshold: 0;
+  -webkit-mask-image: none;
+  mask-image: none;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+/* Animation de flottement pour les icônes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Styles pour la section contact */
+.contact-section {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.contact-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.contact-email-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.contact-email-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Styles pour la grande photo d'équipe */
+.team-photo-container {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.team-photo-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.team-photo-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.team-photo-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+.team-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+  color: white;
+}
+
+.team-photo-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.team-photo-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.team-photo-intro {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--ifm-color-content-secondary);
+  font-style: italic;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+}
+
+/* Responsive pour la photo d'équipe */
+@media (max-width: 768px) {
+  .team-photo-overlay {
+    padding: 1.5rem;
+  }
+  
+  .team-photo-title {
+    font-size: 1.5rem;
+  }
+  
+  .team-photo-description {
+    font-size: 1rem;
+  }
+  
+  .team-photo-intro {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Styles pour la galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 1.5rem;
+  color: white;
+}
+
+.gallery-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gallery-description {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Galerie pour les réalisations */
+.gallery-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.gallery-achievements .gallery-item img {
+  height: 300px;
+}
+
+/* Responsive pour la galerie */
+@media (max-width: 768px) {
+  .gallery-grid,
+  .gallery-achievements {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery-item img {
+    height: 200px;
+  }
+  
+  .gallery-achievements .gallery-item img {
+    height: 250px;
+  }
+  
+  .gallery-overlay {
+    padding: 1rem;
+  }
+  
+  .gallery-title {
+    font-size: 1.1rem;
+  }
+  
+  .gallery-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive design pour les composants */
+@media (max-width: 768px) {
+  .markdown h2::before {
+    left: -15px;
+    width: 3px;
+    height: 16px;
+  }
+  
+  .markdown table {
+    font-size: 0.9em;
+  }
+  
+  .markdown th,
+  .markdown td {
+    padding: 0.75rem;
+  }
+}
+
+/* Styles pour le bouton université */
+.university-button {
+  transition: all 0.3s ease !important;
+}
+
+.university-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* Styles pour le bouton ambition */
+.ambition-button {
+  transition: all 0.3s ease !important;
+}
+
+.ambition-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(251, 191, 36, 0.6) !important;
+}
+
+/* Taille de police uniforme pour tout le site */
+body {
+  font-size: 1.1rem !important;
+}
+
+/* Navigation */
+.navbar__link {
+  font-size: 1rem !important;
+}
+
+.navbar__item {
+  font-size: 1rem !important;
+}
+
+/* Contenu markdown */
+.markdown {
+  font-size: 1.1rem !important;
+}
+
+.markdown p {
+  font-size: 1.1rem !important;
+}
+
+.markdown li {
+  font-size: 1.1rem !important;
+}
+
+.markdown td {
+  font-size: 1.1rem !important;
+}
+
+.markdown th {
+  font-size: 1.1rem !important;
+}
+
+/* Menu sidebar */
+.menu__link {
+  font-size: 1rem !important;
+}
+
+.menu__link--active {
+  font-size: 1rem !important;
+}
+
+/* Table des matières */
+.table-of-contents__link {
+  font-size: 1rem !important;
+}
+
+/* Boutons */
+.button {
+  font-size: 1rem !important;
+}
+
+/* Cartes */
+.card {
+  font-size: 1rem !important;
+}
+
+.card__title {
+  font-size: 1rem !important;
+}
+
+/* Badges */
+.badge {
+  font-size: 1rem !important;
+}
+
+/* Alerts */
+.alert {
+  font-size: 1rem !important;
+}
+
+.alert__title {
+  font-size: 1rem !important;
+}
+
+/* Largeur de contenu pleine largeur avec padding responsive */
+.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.main-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Contenu markdown avec largeur étendue */
+.markdown {
+  max-width: none !important;
+}
+
+/* Articles et pages avec largeur étendue */
+.article {
+  max-width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Documentation avec largeur étendue */
+.docs-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Sidebar et contenu principal */
+.docs-doc-page {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Pages spécifiques avec largeur étendue */
+.theme-doc-markdown {
+  max-width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Sections de contenu */
+.content {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Conteneurs de pages */
+.page-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Grilles et layouts */
+.row {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Zone de contenu principal de la documentation */
+.docs-doc-page .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.docs-doc-page .main-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Contenu de la documentation */
+.docs-doc-page .markdown {
+  max-width: 100% !important;
+  padding-right: 2rem !important;
+  padding-left: 2rem !important;
+}
+
+/* Barre de navigation pleine largeur */
+.navbar {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.navbar__inner {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Responsive - ajustement pour mobile et tablette */
+@media (max-width: 996px) {
+  .container,
+  .main-wrapper,
+  .docs-wrapper,
+  .docs-doc-page,
+  .theme-doc-markdown,
+  .content,
+  .page-wrapper,
+  .row {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .docs-doc-page .markdown {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+  
+  .navbar .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .article {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .main-wrapper,
+  .docs-wrapper,
+  .docs-doc-page,
+  .theme-doc-markdown,
+  .content,
+  .page-wrapper,
+  .row {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .docs-doc-page .markdown {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  
+  .navbar .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .article {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .main-wrapper,
+  .docs-wrapper,
+  .docs-doc-page,
+  .theme-doc-markdown,
+  .content,
+  .page-wrapper,
+  .row {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  .docs-doc-page .markdown {
+    padding-right: 0.75rem !important;
+    padding-left: 0.75rem !important;
+  }
+  
+  .navbar .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Styles spécifiques pour le mode sombre */
+[data-theme='dark'] .feature-card {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .feature-card:hover {
+  background-color: var(--ifm-background-color);
+}
+
+/* Correction des couleurs dans la documentation */
+[data-theme='dark'] .markdown {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown p {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown h1,
+[data-theme='dark'] .markdown h2,
+[data-theme='dark'] .markdown h3,
+[data-theme='dark'] .markdown h4,
+[data-theme='dark'] .markdown h5,
+[data-theme='dark'] .markdown h6 {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown li {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown strong {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown em {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown blockquote {
+  color: var(--ifm-color-content);
+  border-left-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .markdown table {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown th,
+[data-theme='dark'] .markdown td {
+  color: var(--ifm-color-content);
+}
+
+/* Correction des couleurs pour les composants React en mode sombre */
+[data-theme='dark'] .infocard {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .infocard .infocard-title {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .infocard .infocard-content {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .featuregrid {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-item {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-title {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-description {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .table {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .table th,
+[data-theme='dark'] .table td {
+  color: var(--ifm-color-content);
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .badge {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .badge-sticker {
+  color: var(--ifm-color-content);
+}
+
+/* Navigation pleine largeur pour les pages de documentation */
+.docs-doc-page .navbar {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.docs-doc-page .navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.docs-doc-page .navbar__inner {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Styles spécifiques pour les composants React dans la documentation */
+[data-theme='dark'] .card {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .card__title {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .card__body {
+  color: var(--ifm-color-content);
+}
+
+/* Correction pour les éléments spécifiques des pages Test2 */
+[data-theme='dark'] .badge-electronique {
+  background-color: var(--color-electronique);
+  color: white;
+}
+
+[data-theme='dark'] .badge-mecanique {
+  background-color: var(--color-mecanique);
+  color: white;
+}
+
+[data-theme='dark'] .badge-ros {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+[data-theme='dark'] .badge-ia {
+  background-color: var(--color-it);
+  color: white;
+}
+
+/* Styles spécifiques pour les composants de documentation */
+[data-theme='dark'] .infocard {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .infocard .infocard-title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .infocard .infocard-content {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .featuregrid {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-item {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .featuregrid .featuregrid-description {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .table {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .table th {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .table td {
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+/* Styles spécifiques pour les composants React de documentation */
+[data-theme='dark'] .card {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .card .card__title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .card__body {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .card__content {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Correction pour les tableaux dans la documentation */
+[data-theme='dark'] table {
+  color: var(--ifm-color-content) !important;
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] table th {
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] table td {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+/* Correction pour les grilles de fonctionnalités */
+[data-theme='dark'] .grid {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .grid .grid-item {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .grid .grid-item h3 {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .grid .grid-item p {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Correction pour les badges dans la documentation */
+[data-theme='dark'] .badge {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .badge-sticker {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Correction pour les icônes et éléments spécifiques */
+[data-theme='dark'] .icon {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .description {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles très spécifiques pour les composants React de documentation */
+[data-theme='dark'] .infocard,
+[data-theme='dark'] .infocard * {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .featuregrid,
+[data-theme='dark'] .featuregrid * {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .table,
+[data-theme='dark'] .table * {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+/* Correction pour tous les éléments de texte dans la documentation */
+[data-theme='dark'] .docs-doc-page * {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .docs-doc-page .card {
+  background-color: var(--ifm-background-surface-color) !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .docs-doc-page .card * {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .docs-doc-page table {
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] .docs-doc-page table th {
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .docs-doc-page table td {
+  background-color: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles spécifiques pour les modules CSS des composants React */
+[data-theme='dark'] .card {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .card.info {
+  background: var(--ifm-background-surface-color) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .card.warning {
+  background: var(--ifm-background-surface-color) !important;
+  border-left-color: #f59e0b !important;
+}
+
+[data-theme='dark'] .card.success {
+  background: var(--ifm-background-surface-color) !important;
+  border-left-color: #10b981 !important;
+}
+
+[data-theme='dark'] .card.danger {
+  background: var(--ifm-background-surface-color) !important;
+  border-left-color: #ef4444 !important;
+}
+
+[data-theme='dark'] .card .title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .body {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .body p {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .body li {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card .icon {
+  background: var(--ifm-background-color) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles pour FeatureGrid */
+[data-theme='dark'] .gridItem {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .gridItem .title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .gridItem .description {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .gridItem .icon {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+/* Styles pour Table */
+[data-theme='dark'] .tableContainer {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] .table {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] .headerCell {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+[data-theme='dark'] .tableRow {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] .tableRow:nth-child(even) {
+  background: var(--ifm-background-color) !important;
+}
+
+[data-theme='dark'] .tableRow:hover {
+  background: var(--ifm-color-emphasis-100) !important;
+}
+
+[data-theme='dark'] .tableCell {
+  color: var(--ifm-color-content) !important;
+  border-bottom-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] .tableCell:first-child {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles très spécifiques pour les modules CSS en mode sombre */
+[data-theme='dark'] [class*="card"] {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] [class*="card"] [class*="title"] {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] [class*="body"] {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] [class*="content"] {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] p {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] li {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] div {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="card"] span {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles pour FeatureGrid */
+[data-theme='dark'] [class*="gridItem"] {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] [class*="gridItem"] [class*="title"] {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="gridItem"] [class*="description"] {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="gridItem"] h4 {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] [class*="gridItem"] p {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles pour Table */
+[data-theme='dark'] [class*="tableContainer"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] [class*="table"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] [class*="headerCell"] {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+[data-theme='dark'] [class*="tableRow"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] [class*="tableRow"]:nth-child(even) {
+  background: var(--ifm-background-color) !important;
+}
+
+[data-theme='dark'] [class*="tableCell"] {
+  color: var(--ifm-color-content) !important;
+  border-bottom-color: var(--ifm-color-emphasis-200) !important;
+}
+
+[data-theme='dark'] [class*="tableCell"]:first-child {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Force tous les éléments de texte en mode sombre */
+[data-theme='dark'] .markdown * {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .markdown h1,
+[data-theme='dark'] .markdown h2,
+[data-theme='dark'] .markdown h3,
+[data-theme='dark'] .markdown h4,
+[data-theme='dark'] .markdown h5,
+[data-theme='dark'] .markdown h6 {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .markdown p {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .markdown span {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .markdown div {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Styles ultra-spécifiques pour forcer les couleurs en mode sombre */
+[data-theme='dark'] * {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] *[class*="card"] {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] *[class*="gridItem"] {
+  background: var(--ifm-background-surface-color) !important;
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] *[class*="tableContainer"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] *[class*="table"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] *[class*="headerCell"] {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+[data-theme='dark'] *[class*="tableRow"] {
+  background: var(--ifm-background-surface-color) !important;
+}
+
+[data-theme='dark'] *[class*="tableCell"] {
+  color: var(--ifm-color-content) !important;
+}
+
+/* Force les couleurs pour tous les éléments de texte */
+[data-theme='dark'] p,
+[data-theme='dark'] span,
+[data-theme='dark'] div,
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6,
+[data-theme='dark'] li,
+[data-theme='dark'] td,
+[data-theme='dark'] th {
+  color: var(--ifm-color-content) !important;
+}
+
+.docs-doc-page .navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.docs-doc-page .navbar__inner {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Styles très spécifiques pour forcer la largeur complète de la navigation */
+.navbar {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.navbar__inner {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Force la largeur pour toutes les pages */
+.main-wrapper .navbar {
+  max-width: 100vw !important;
+  width: 100vw !important;
+}
+
+.main-wrapper .navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Styles spécifiques pour les pages de documentation */
+.docs-doc-page .navbar {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  position: relative !important;
+}
+
+.docs-doc-page .navbar .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.docs-doc-page .navbar__inner {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Section Hero pleine largeur */
+.hero-section {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  left: 0 !important;
+  right: 0 !important;
+  position: relative !important;
+  overflow-x: hidden !important;
+}
+
+.hero-section .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Force la largeur complète pour la section hero */
+header.hero-section {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Responsive pour la section hero */
+@media (max-width: 996px) {
+  .hero-section .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  header.hero-section {
+    min-height: 80vh !important;
+    padding: 4rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  header.hero-section {
+    min-height: 70vh !important;
+    padding: 3rem 0 !important;
+  }
+}
+
+/* Amélioration responsive pour toutes les sections */
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+@media (max-width: 996px) {
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Ajustement des colonnes pour tablette */
+  .col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem;
+  }
+  
+  .col--6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .col--4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Ajustement des colonnes pour mobile */
+  .col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .col--6,
+  .col--4,
+  .col--3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Amélioration responsive pour les images */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Responsive pour les cartes de fonctionnalités */
+@media (max-width: 996px) {
+  .feature-card {
+    margin-bottom: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive pour les grilles de galerie */
+@media (max-width: 1200px) {
+  .gallery-grid,
+  .gallery-achievements {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid,
+  .gallery-achievements {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery-item img {
+    height: 200px;
+  }
+  
+  .gallery-achievements .gallery-item img {
+    height: 250px;
+  }
+}
+
+/* Responsive pour les sections avec deux colonnes */
+@media (max-width: 996px) {
+  .row .col--6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem;
+  }
+  
+  .row .col--4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsive pour les boutons */
+@media (max-width: 768px) {
+  .hero-btn-primary,
+  .hero-btn-outline,
+  .final-cta-btn {
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-btn-primary,
+  .hero-btn-outline,
+  .final-cta-btn {
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Responsive pour les titres */
+@media (max-width: 996px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Responsive pour les sections de contact */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1.5rem !important;
+    margin: 2rem 0 !important;
+  }
+  
+  .contact-email-card {
+    padding: 0.75rem 1.5rem !important;
+  }
+}
+
+/* Responsive pour les statistiques */
+@media (max-width: 768px) {
+  .stat-number {
+    font-size: 2rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Amélioration générale du responsive */
+@media (max-width: 996px) {
+  section {
+    padding: 4rem 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 0 !important;
+  }
+}
+
+/* Correction pour éviter le débordement horizontal */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Amélioration du responsive pour les tableaux */
+@media (max-width: 768px) {
+  .markdown table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .markdown th,
+  .markdown td {
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+}

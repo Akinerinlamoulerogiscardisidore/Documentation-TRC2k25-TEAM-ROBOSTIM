@@ -1,0 +1,53 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Electronics/Test3
+title: 'Test 3 — Afficheur 7 Segments'
+sidebar_label: Test 3
+---
+
+## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+
+<InfoCard type="success" title="Aperçu du test" icon="🔢">
+Réalisation d'un afficheur 7 segments fonctionnel permettant d'afficher des chiffres et certaines lettres. Test des capacités de sortie (output) du système électronique.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à concevoir et réaliser un système de sortie électronique. Vous devrez créer un afficheur 7 segments capable d'afficher des chiffres (0-9) et éventuellement des lettres.
+
+### Matériel requis
+
+<Table headers={["Composant", "Référence", "Rôle"]}
+  data={[
+    ["Afficheur 7 segments", "Common Anode/Cathode", "Affichage"],
+    ["Décodeur BCD", "74LS47 ou équivalent", "Décodage BCD vers 7 segments"],
+    ["Arduino", "Nano ou Uno", "Contrôle"],
+    ["Résistances", "220Ω-470Ω", "Limitation de courant"],
+    ["Transistors", "2N2222 ou équivalent", "Commutation (si nécessaire)"]
+  ]}
+/>
+
+### Fonctionnalités attendues
+
+<FeatureGrid items={[
+  {icon:"0️⃣", title:"Chiffres", description:"Affichage des chiffres 0-9"},
+  {icon:"🔤", title:"Lettres", description:"Affichage de certaines lettres (A-F)"},
+  {icon:"🔄", title:"Multiplexage", description:"Affichage de plusieurs chiffres (optionnel)"},
+  {icon:"💡", title:"Luminosité", description:"Contrôle de la luminosité"},
+  {icon:"⚡", title:"Efficacité", description:"Gestion optimale de la consommation"}
+]} />
+
+### Critères de notation (100 points)
+
+1. **Circuiterie (30 points)** : Schéma, choix des composants, alimentation
+2. **Code (25 points)** : Fonctionnalité, optimisation, lisibilité
+3. **Fonctionnement (30 points)** : Affichage correct, stabilité
+4. **Documentation (10 points)** : Schémas, explications, code commenté
+5. **Présentation (5 points)** : Démonstration, qualité visuelle
+
+---
+
+*Pour plus de détails techniques, consultez la documentation complète.*

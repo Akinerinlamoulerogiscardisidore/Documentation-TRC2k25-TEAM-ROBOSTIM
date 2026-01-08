@@ -1,0 +1,53 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Electronics/Test1
+title: 'Test 1 — Gyroscope et Accéléromètre'
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🧭">
+Détection de l'orientation dans l'espace et de la vitesse de déplacement de la main à l'aide d'un capteur gyroscope et accéléromètre, avec affichage sur écran LCD.
+</InfoCard>
+
+### Objectif
+
+Ce test vise à évaluer votre capacité à identifier puis exploiter les valeurs d'un capteur gyroscope et accéléromètre pour donner l'orientation dans l'espace ainsi que la vitesse de votre main.
+
+### Matériel requis
+
+<Table headers={["Composant", "Référence", "Rôle"]}
+  data={[
+    ["MPU6050", "GY-521", "Capteur gyroscope/accéléromètre 6 axes"],
+    ["Arduino Nano", "ATmega328P", "Microcontrôleur"],
+    ["LCD 16x2", "I2C", "Affichage des données"],
+    ["Régulateurs", "LM7805, AMS1117", "Alimentation sécurisée"],
+    ["Résistances", "4.7kΩ", "Pull-up I2C"]
+  ]}
+/>
+
+### Livrables attendus
+
+<FeatureGrid items={[
+  {icon:"🔍", title:"Identification", description:"Capteur gyro/accéléro avec I2C"},
+  {icon:"📐", title:"Schéma KICAD", description:"Schéma électronique complet"},
+  {icon:"💻", title:"Code Arduino", description:"Code détaillé avec commentaires"},
+  {icon:"🔋", title:"Alimentation", description:"Alimentation électrique personnalisée"},
+  {icon:"📹", title:"Vidéo", description:"Démonstration avec équipe visible"}
+]} />
+
+### Critères de notation (100 points)
+
+1. **Circuiterie (25 points)** : Schéma, alimentation sécurisée, gestion câbles
+2. **Code (25 points)** : Compréhension, optimisation, lisibilité
+3. **Fonctionnement (30 points)** : Détection précise des 6 directions, affichage LCD
+4. **Documentation (10 points)** : Structure claire et complète
+5. **Présentation (10 points)** : Slides, maîtrise, réponses aux questions
+
+---
+
+*Pour plus de détails, consultez la version complète en [Markdown](./Test1.md)*

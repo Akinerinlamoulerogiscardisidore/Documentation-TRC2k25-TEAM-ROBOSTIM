@@ -1,0 +1,326 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: template-ros
+title: Template Documentation ROS
+sidebar_label: Template ROS
+---
+
+# 🤖 Template de Documentation Technique - Pôle ROS
+
+> **📋 Guide d'utilisation** : Ce template vous aide à créer une documentation technique complète pour les tests et développements ROS. Copiez ce fichier et remplissez les sections selon vos besoins.
+
+---
+
+## 📝 Structure du Document
+
+### 1. Imports nécessaires (en haut du fichier)
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+```
+
+### 2. Frontmatter (métadonnées)
+```markdown
+---
+id: nom-du-test
+title: Nom du Test - Description
+sidebar_label: Nom court
+---
+```
+
+---
+
+## 📖 Exemple Complet de Documentation
+
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: test-navigation-stack
+title: Test Navigation Stack ROS 2
+sidebar_label: Test Navigation
+---
+
+# 🤖 Test Navigation Stack ROS 2
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🗺️">
+Implémentation et validation de la navigation autonome avec Nav2, SLAM et planification de trajectoire.
+</InfoCard>
+
+## 📋 Objectif du test
+
+Décrire l'objectif principal du test ROS.
+
+**Exemple** :
+Valider le fonctionnement de la stack de navigation ROS 2 pour la navigation autonome du robot dans un environnement simulé et réel.
+
+## 🎯 Critères de réussite
+
+- **Précision de localisation** : <5cm d'erreur
+- **Temps de planification** : <2s pour un chemin de 10m
+- **Suivi de trajectoire** : <10cm de déviation
+- **Temps de réponse** : <100ms pour les commandes
+
+## 🛠️ Matériel et Logiciel requis
+
+### Matériel
+- **Robot** : [Nom du robot]
+- **LIDAR** : [Modèle]
+- **IMU** : [Modèle]
+- **Ordinateur** : [Spécifications]
+
+### Logiciel
+- **ROS 2** : Humble / Foxy
+- **Nav2** : Version [X.X]
+- **SLAM Toolbox** : Version [X.X]
+- **RViz2** : Pour la visualisation
+
+## 📊 Architecture ROS
+
+### Nœuds et Topics
+
+<Table headers={["Nœud", "Topic", "Type", "Description"]}
+  data={[
+    ["/navigation_node", "/cmd_vel", "geometry_msgs/Twist", "Commandes de vitesse"],
+    ["/slam_toolbox", "/map", "nav_msgs/OccupancyGrid", "Carte générée"],
+    ["/amcl", "/amcl_pose", "geometry_msgs/PoseWithCovariance", "Localisation"],
+    ["/planner", "/plan", "nav_msgs/Path", "Trajectoire planifiée"]
+  ]}
+/>
+
+### Services
+
+<Table headers={["Service", "Type", "Description"]}
+  data={[
+    ["/compute_path_to_pose", "nav2_msgs/ComputePathToPose", "Calcul de trajectoire"],
+    ["/clear_costmap", "std_srvs/Empty", "Réinitialisation de la costmap"]
+  ]}
+/>
+
+## 📊 Procédure de test
+
+### Étape 1 : Configuration de l'environnement
+
+```bash
+# Source ROS 2
+source /opt/ros/humble/setup.bash
+
+# Créer un workspace
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+
+# Cloner les packages nécessaires
+git clone https://github.com/ros-planning/navigation2.git
+```
+
+### Étape 2 : Lancement de la simulation
+
+```bash
+# Lancer Gazebo avec le robot
+ros2 launch robot_description gazebo.launch.py
+
+# Lancer Nav2
+ros2 launch nav2_bringup navigation_launch.py
+
+# Lancer SLAM
+ros2 launch slam_toolbox online_async_launch.py
+```
+
+### Étape 3 : Configuration Nav2
+
+**Fichier de configuration** (`nav2_params.yaml`) :
+```yaml
+amcl:
+  ros__parameters:
+    use_sim_time: true
+    initial_pose:
+      x: 0.0
+      y: 0.0
+      yaw: 0.0
+
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    use_sim_time: true
+```
+
+### Étape 4 : Test de navigation
+
+```bash
+# Envoyer un goal de navigation
+ros2 action send_goal /navigate_to_pose \
+  nav2_msgs/action/NavigateToPose \
+  "{pose: {header: {frame_id: 'map'}, pose: {position: {x: 2.0, y: 1.0}}}}"
+```
+
+## 📈 Résultats attendus
+
+### Métriques de performance
+
+<Table headers={["Métrique", "Valeur cible", "Valeur mesurée", "Statut"]}
+  data={[
+    ["Précision localisation", "<5cm", "3.2cm", "✅"],
+    ["Temps planification", "<2s", "1.5s", "✅"],
+    ["Déviation trajectoire", "<10cm", "7.5cm", "✅"],
+    ["Temps réponse", "<100ms", "85ms", "✅"]
+  ]}
+/>
+
+### Visualisation dans RViz2
+
+**Éléments à visualiser** :
+- Carte (OccupancyGrid)
+- Trajectoire planifiée (Path)
+- Position actuelle (Pose)
+- Costmap (Costmap)
+
+## 🔍 Validation des résultats
+
+### Graphiques de performance
+
+**Exemple de script Python pour analyse** :
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Données de test
+distances = np.array([1, 2, 5, 10, 20])  # mètres
+temps_planification = np.array([0.5, 0.8, 1.2, 1.8, 2.5])  # secondes
+
+plt.figure(figsize=(10, 6))
+plt.plot(distances, temps_planification, 'o-', linewidth=2, markersize=8)
+plt.xlabel('Distance (m)')
+plt.ylabel('Temps de planification (s)')
+plt.title('Performance du planificateur Nav2')
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+## 🚨 Dépannage
+
+### Problèmes courants
+
+#### 1. Nœud non détecté
+```bash
+# Vérifier les nœuds actifs
+ros2 node list
+
+# Vérifier les topics
+ros2 topic list
+
+# Vérifier les services
+ros2 service list
+```
+
+#### 2. Erreur de localisation
+- Vérifier la transformation TF
+- Contrôler les données du LIDAR
+- Vérifier la configuration AMCL
+
+#### 3. Planification échoue
+- Vérifier la costmap
+- Contrôler les paramètres du planificateur
+- Vérifier les obstacles sur la carte
+
+### Commandes de diagnostic
+
+```bash
+# Vérifier les transformations TF
+ros2 run tf2_tools view_frames
+
+# Écouter un topic
+ros2 topic echo /odom
+
+# Enregistrer un rosbag
+ros2 bag record -a
+```
+
+## 📝 Rapport de test
+
+### Résumé des performances
+- **Durée du test** : [X] heures
+- **Nombre de trajectoires testées** : [X]
+- **Taux de réussite** : [X]%
+- **Précision moyenne** : [X]cm
+
+### Recommandations
+1. **Optimisation** : Ajuster les paramètres de costmap
+2. **Calibration** : Recalibrer les capteurs régulièrement
+3. **Monitoring** : Surveiller les performances en temps réel
+4. **Documentation** : Mettre à jour la documentation des paramètres
+
+## 🔄 Tests de suivi
+
+### Scénarios de test
+- Navigation en environnement statique
+- Navigation avec obstacles dynamiques
+- Navigation en environnement inconnu
+- Test de robustesse (perturbations)
+
+### Métriques à surveiller
+- Temps de calcul
+- Consommation CPU/RAM
+- Précision de localisation
+- Stabilité du système
+
+---
+
+## 📸 Ajout d'images et diagrammes
+
+Pour ajouter des images, placez-les dans `static/img/` :
+
+```markdown
+![Architecture ROS](/img/architecture-ros.png)
+![RViz2 Visualization](/img/rviz2-screenshot.png)
+```
+
+## 🔗 Liens utiles
+
+- [Documentation Nav2](https://navigation.ros.org/)
+- [ROS 2 Documentation](https://docs.ros.org/)
+- [SLAM Toolbox](https://github.com/SteveMacenski/slam_toolbox)
+
+---
+
+## 💡 Composants React disponibles
+
+### InfoCard
+```jsx
+<InfoCard type="info" title="Titre" icon="📡">
+Contenu de la carte d'information
+</InfoCard>
+```
+
+Types disponibles : `info`, `warning`, `success`, `danger`
+
+### FeatureGrid
+```jsx
+<FeatureGrid items={[
+  {icon:"📡", title:"Titre 1", description:"Description 1"},
+  {icon:"🗺️", title:"Titre 2", description:"Description 2"}
+]} />
+```
+
+### Table
+```jsx
+<Table headers={["Colonne 1", "Colonne 2"]}
+  data={[
+    ["Donnée 1", "Donnée 2"],
+    ["Donnée 3", "Donnée 4"]
+  ]}
+/>
+```
+
+---
+
+*Template créé le : [Date]*
+*Dernière mise à jour : [Date]*
+*Statut : ✅ Template prêt à l'emploi*

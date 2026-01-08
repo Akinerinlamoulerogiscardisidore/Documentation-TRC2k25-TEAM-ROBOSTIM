@@ -1,0 +1,23 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: IA/Overview
+title: 'Aperçu — Pôle IA'
+sidebar_label: Overview
+---
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
+Structure pour les tests IA: vision, suivi, planification et RL.
+</InfoCard>
+
+### Sommaire
+<Table headers={["Section", "Description"]}
+  data={[["Test 1", "Vision et Classification"],["Test 2", "Suivi d'Objets"],["Test 3", "Planification et RL"]]} />
+
+<FeatureGrid items={[{icon:"📷", title:"Vision", description:"Détection & classification"},{icon:"🎯", title:"Tracking", description:"Suivi temps réel"},{icon:"🧭", title:"Planification", description:"RL & path planning"}]} />
+
+

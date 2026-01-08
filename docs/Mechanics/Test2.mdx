@@ -1,0 +1,69 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Mechanics/Test2
+title: 'Test 2 — Niveau Intermédiaire'
+sidebar_label: Test 2
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="warning" title="Aperçu du test" icon="⚙️">
+Test de niveau intermédiaire en mécanique : Modélisation de pièces plus complexes avec assemblages avancés, calculs de contraintes et validation de la faisabilité pour l'impression 3D.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue vos compétences intermédiaires en modélisation CAO. Vous devrez créer des pièces plus complexes avec des assemblages avancés, en tenant compte des contraintes mécaniques et de la faisabilité de fabrication.
+
+### Compétences évaluées
+
+<FeatureGrid items={[
+  {icon:"🔧", title:"Complexité", description:"Pièces avec formes complexes"},
+  {icon:"🧩", title:"Assemblages", description:"Assemblages multi-pièces avancés"},
+  {icon:"📊", title:"Analyse", description:"Calculs de contraintes mécaniques"},
+  {icon:"🖨️", title:"Faisabilité", description:"Validation pour impression 3D"},
+  {icon:"⚖️", title:"Optimisation", description:"Optimisation des masses et volumes"}
+]} />
+
+### Aspects techniques
+
+<Table headers={["Aspect", "Description", "Importance"]}
+  data={[
+    ["Contraintes géométriques", "Application correcte et complète", "Critique"],
+    ["Dimensions", "Respect de toutes les cotes", "Critique"],
+    ["Masses", "Calculs précis des masses", "Important"],
+    ["Assemblage", "Utilisation de toutes les pièces", "Critique"],
+    ["Faisabilité 3D", "Validation pour impression", "Important"]
+  ]}
+/>
+
+### Critères de notation (70 points sur 300, ramené à 100)
+
+1. **Contraintes géométriques (15 points)** : Application des contraintes adéquates
+2. **Dimensions (15 points)** : Respect de toutes les dimensions
+3. **Masses (15 points)** : Capacité à trouver les bonnes valeurs de masses
+4. **Assemblage (15 points)** : Utilisation de toutes les pièces fournies
+5. **Contraintes d'assemblage (10 points)** : Utilisation de toutes les contraintes nécessaires
+
+### Considérations pour l'impression 3D
+
+- **Surplombs** : Éviter les surplombs >45° sans supports
+- **Épaisseurs minimales** : Respecter les épaisseurs minimales (2-3mm)
+- **Tolérances** : Prévoir des jeux fonctionnels (0.2-0.5mm)
+- **Orientation** : Optimiser l'orientation pour la fabrication
+- **Supports** : Minimiser les besoins en supports
+
+### Documentation requise
+
+- **Modèles 3D** : Tous les fichiers CAO
+- **Vues techniques** : Plans avec cotes
+- **Rapport d'analyse** : Contraintes, masses, centre de masse
+- **Validation fabrication** : Analyse de faisabilité 3D
+- **GitHub** : Dépôt complet et organisé
+
+---
+
+*Pour plus de détails, consultez les spécifications complètes du test.*

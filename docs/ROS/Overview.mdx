@@ -1,0 +1,23 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: ROS/Overview
+title: 'Aperçu — Pôle ROS 2'
+sidebar_label: Overview
+---
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Ce que vous trouverez ici" icon="📚">
+Structure pour les tests ROS 2: topics, nœuds, navigation et perception.
+</InfoCard>
+
+### Sommaire
+<Table headers={["Section", "Description"]}
+  data={[["Test 1", "Capteurs et Topics"],["Test 2", "Navigation de Base"],["Test 3", "Perception et Fusion"]]} />
+
+<FeatureGrid items={[{icon:"📡", title:"TF", description:"Chaînes de repères"},{icon:"🧭", title:"Nav2", description:"Odométrie & planification"},{icon:"🧮", title:"Fusion", description:"EKF/UKF"}]} />
+
+

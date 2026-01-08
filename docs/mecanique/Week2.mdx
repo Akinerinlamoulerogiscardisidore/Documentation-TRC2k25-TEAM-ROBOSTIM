@@ -1,0 +1,60 @@
+import InfoCard from '@site/src/components/InfoCard';
+import CodeBlock from '@site/src/components/CodeBlock';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import StepCard from '@site/src/components/StepCard';
+import Table from '@site/src/components/Table';
+import Link from '@docusaurus/Link';
+
+<div className="section-banner-mecanique">
+  <div className="container">
+    <h1 className="banner-title">Test Mécanique 2 : Sous-ensembles</h1>
+    <p className="banner-description">Validation des sous-systèmes mécaniques et des interfaces</p>
+    <div className="banner-actions">
+      <Link className="button button--primary" to="#presentation">Commencer la lecture</Link>
+      <Link className="button button--secondary" to="#ressources">Voir la démo</Link>
+    </div>
+  </div>
+  <div className="section-accent-mecanique" />
+</div>
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<FeatureGrid
+  items={[
+    { icon: '🧱', title: 'Modules', description: 'Modules mécaniques et interfaces' },
+    { icon: '🧪', title: 'Tests', description: 'Bancs et procédures de validation' },
+    { icon: '🧷', title: 'Fixations', description: 'Standardisation et interchangeabilité' },
+  ]}
+/>
+
+### Choix du matériel
+<Table
+  headers={["Élément", "Référence", "Rôle"]}
+  data={[
+    ["Support moteur", "Alu 2 mm", "Rigidité et dissipation"],
+    ["Entretoises", "M3 x 10", "Espacement contrôlé"],
+    ["Courroie / Poulie", "GT2", "Transmission mouvement"],
+  ]}
+/>
+
+### Procédure
+<StepCard
+  steps={[
+    { title: 'Montage module', description: 'Assembler le module et ses interfaces.' },
+    { title: 'Alignement', description: 'Contrôler équerrage et alignements.' },
+    { title: 'Essais', description: 'Mesurer jeux, vibrations, échauffements.' },
+  ]}
+/>
+
+### Conseils
+<InfoCard type="tip" title="Astuces" icon="🛠️">
+Privilégier des tolérances réalistes et des solutions facilement remplaçables.
+</InfoCard>
+
+### Ressources et liens utiles {/** id=ressources */}
+<InfoCard type="info" title="Ressources" icon="📁">
+- Dossier CAO (à venir)
+- Photos/vidéos d’essais (à venir)
+</InfoCard>
+
+

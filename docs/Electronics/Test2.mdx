@@ -1,0 +1,61 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Electronics/Test2
+title: 'Test 2 — La Boîte Noire (Communication)'
+sidebar_label: Test 2
+---
+
+## Présentation <span className="badge-sticker badge-electronique">🔌 Électronique</span>
+
+<InfoCard type="warning" title="Aperçu du test" icon="📡">
+Test de communication : Réalisation d'un système de communication entre deux modules électroniques sans connaître le protocole exact utilisé par la "boîte noire".
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à analyser, comprendre et implémenter un protocole de communication inconnu. Vous devrez décoder les signaux émis par une "boîte noire" et créer un système capable de communiquer avec elle.
+
+### Matériel requis
+
+<Table headers={["Composant", "Référence", "Rôle"]}
+  data={[
+    ["Boîte noire", "Module fourni", "Émetteur de signaux"],
+    ["Oscilloscope", "Tektronix ou équivalent", "Analyse des signaux"],
+    ["Arduino", "Nano ou Uno", "Réception et traitement"],
+    ["Analyseur logique", "Optionnel", "Décodage protocolaire"],
+    ["Composants passifs", "Résistances, condensateurs", "Conditionnement signal"]
+  ]}
+/>
+
+### Étapes du test
+
+<FeatureGrid items={[
+  {icon:"🔍", title:"Analyse", description:"Analyse des signaux avec oscilloscope"},
+  {icon:"📊", title:"Décodage", description:"Identification du protocole de communication"},
+  {icon:"💻", title:"Implémentation", description:"Code pour communiquer avec la boîte noire"},
+  {icon:"✅", title:"Validation", description:"Test de communication bidirectionnelle"},
+  {icon:"📝", title:"Documentation", description:"Rapport complet du processus"}
+]} />
+
+### Protocoles possibles
+
+- **UART/Serial** : Communication série asynchrone
+- **SPI** : Serial Peripheral Interface
+- **I2C** : Inter-Integrated Circuit
+- **OneWire** : Protocole 1-wire
+- **Propriétaire** : Protocole spécifique à décoder
+
+### Critères de notation (100 points)
+
+1. **Analyse (30 points)** : Qualité de l'analyse, identification du protocole
+2. **Implémentation (35 points)** : Code fonctionnel, gestion des erreurs
+3. **Communication (20 points)** : Échange de données réussi
+4. **Documentation (10 points)** : Rapport détaillé, schémas
+5. **Présentation (5 points)** : Démonstration, réponses
+
+---
+
+*Note : Les détails spécifiques de la boîte noire seront fournis lors du test.*

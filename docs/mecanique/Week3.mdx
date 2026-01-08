@@ -1,0 +1,55 @@
+import InfoCard from '@site/src/components/InfoCard';
+import CodeBlock from '@site/src/components/CodeBlock';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import StepCard from '@site/src/components/StepCard';
+import Table from '@site/src/components/Table';
+import Link from '@docusaurus/Link';
+
+<div className="section-banner-mecanique">
+  <div className="container">
+    <h1 className="banner-title">Test Mécanique 3 : Intégration finale</h1>
+    <p className="banner-description">Assemblage complet, tolérances et validation système</p>
+    <div className="banner-actions">
+      <Link className="button button--primary" to="#presentation">Commencer la lecture</Link>
+      <Link className="button button--secondary" to="#ressources">Voir la démo</Link>
+    </div>
+  </div>
+  <div className="section-accent-mecanique" />
+</div>
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<FeatureGrid
+  items={[
+    { icon: '🧩', title: 'Intégration', description: 'Mise en commun des sous-systèmes' },
+    { icon: '🧭', title: 'Géométrie', description: 'Jeux, alignements, contraintes' },
+    { icon: '✅', title: 'Validation', description: 'Recette fonctionnelle et sécurité' },
+  ]}
+/>
+
+### Plan d’assemblage
+<StepCard
+  steps={[
+    { title: 'Assemblage progressif', description: 'Procéder sous-système par sous-système.' },
+    { title: 'Contrôle', description: 'Contrôler frottements, collisions, jeu fonctionnel.' },
+    { title: 'Recette', description: 'Tester en charge et documenter résultats.' },
+  ]}
+/>
+
+### Liste de contrôle
+<Table
+  headers={["Contrôle", "Critère", "Statut"]}
+  data={[
+    ["Parallelisme", "< 0.5 mm", "À vérifier"],
+    ["Vibrations", "Faibles", "À vérifier"],
+    ["Accessibilité", "Maintenance aisée", "À vérifier"],
+  ]}
+/>
+
+### Ressources et liens utiles {/** id=ressources */}
+<InfoCard type="info" title="Ressources" icon="📁">
+- Dossier final (à venir)
+- Rapport d’intégration (à venir)
+</InfoCard>
+
+

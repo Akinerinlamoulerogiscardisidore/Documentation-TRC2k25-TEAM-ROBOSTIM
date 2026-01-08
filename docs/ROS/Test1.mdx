@@ -1,0 +1,53 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: ROS/Test1
+title: "Test 1 — Système de Classe de Gestion d'un Robot"
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-it">💻 IT</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🤖">
+Réalisation d'un système de classe de gestion d'un Robot. Conception orientée objet pour gérer les différents composants et fonctionnalités d'un robot de manière modulaire et maintenable.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à concevoir et implémenter une architecture logicielle robuste pour la gestion d'un robot. Vous devrez créer un système de classes permettant de gérer les différents sous-systèmes du robot.
+
+### Concepts clés
+
+<FeatureGrid items={[
+  {icon:"🏗️", title:"Architecture", description:"Conception modulaire et extensible"},
+  {icon:"🔧", title:"Classes", description:"Encapsulation des fonctionnalités"},
+  {icon:"🔌", title:"Interfaces", description:"Communication entre modules"},
+  {icon:"📦", title:"Héritage", description:"Réutilisation de code"},
+  {icon:"🛡️", title:"Robustesse", description:"Gestion d'erreurs et exceptions"}
+]} />
+
+### Structure de classes
+
+<Table headers={["Classe", "Responsabilité", "Méthodes principales"]}
+  data={[
+    ["Robot", "Classe principale", "init(), start(), stop(), update()"],
+    ["MotorController", "Gestion moteurs", "setSpeed(), getSpeed(), stop()"],
+    ["SensorManager", "Gestion capteurs", "readSensor(), calibrate()"],
+    ["ActuatorController", "Gestion actionneurs", "activate(), deactivate()"],
+    ["CommunicationHandler", "Communication", "send(), receive(), connect()"]
+  ]}
+/>
+
+### Critères de notation (100 points)
+
+1. **Architecture (30 points)** : Design patterns, modularité, extensibilité
+2. **Implémentation (35 points)** : Code fonctionnel, gestion d'erreurs
+3. **Documentation (20 points)** : Commentaires, UML, explications
+4. **Tests (10 points)** : Tests unitaires, validation
+5. **Présentation (5 points)** : Démonstration, réponses
+
+---
+
+*Pour plus de détails, consultez la documentation complète.*

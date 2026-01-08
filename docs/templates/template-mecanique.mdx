@@ -1,0 +1,367 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: template-mecanique
+title: Template Documentation Mécanique
+sidebar_label: Template Mécanique
+---
+
+# ⚙️ Template de Documentation Technique - Pôle Mécanique
+
+> **📋 Guide d'utilisation** : Ce template vous aide à créer une documentation technique complète pour les tests et développements mécaniques. Copiez ce fichier et remplissez les sections selon vos besoins.
+
+---
+
+## 📝 Structure du Document
+
+### 1. Imports nécessaires (en haut du fichier)
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+```
+
+### 2. Frontmatter (métadonnées)
+```markdown
+---
+id: nom-du-test
+title: Nom du Test - Description
+sidebar_label: Nom court
+---
+```
+
+---
+
+## 📖 Exemple Complet de Documentation
+
+```jsx
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: test-assemblage-chassis
+title: Test Assemblage Chassis Robot
+sidebar_label: Test Chassis
+---
+
+# ⚙️ Test Assemblage Chassis Robot
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🔧">
+Validation de l'assemblage et de la robustesse du chassis principal du robot, incluant les tests de résistance et de stabilité.
+</InfoCard>
+
+## 📋 Objectif du test
+
+Décrire l'objectif principal du test mécanique.
+
+**Exemple** :
+Valider la conception, l'assemblage et la robustesse du chassis principal du robot, en vérifiant sa résistance aux contraintes mécaniques et sa stabilité structurelle.
+
+## 🎯 Critères de réussite
+
+- **Résistance** : Supporte une charge de [X] kg sans déformation
+- **Stabilité** : Déviation <2mm sous charge maximale
+- **Rigidité** : Module d'élasticité >[X] GPa
+- **Durabilité** : Résiste à [X] cycles de charge/décharge
+
+## 🛠️ Matériel requis
+
+### Composants mécaniques
+- **Chassis** : Structure principale en [matériau]
+- **Vis et boulons** : M3, M4, M5 selon les besoins
+- **Entretoises** : Aluminium 20mm
+- **Plaques de montage** : PLA/PETG/ABS
+
+### Outils
+- **Imprimante 3D** : [Modèle]
+- **Perceuse** : Pour les trous de montage
+- **Clés** : Hex, Allen, Torx
+- **Équipement de mesure** : Pied à coulisse, niveau
+
+### Équipement de test
+- **Machine de traction** : Pour tests de résistance
+- **Vibromètre** : Pour tests de vibrations
+- **Balance** : Pour peser les composants
+
+## 📊 Procédure de test
+
+### Étape 1 : Conception CAO
+
+**Logiciel utilisé** : Fusion 360 / SolidWorks / FreeCAD
+
+**Fichiers de conception** :
+```
+chassis/
+├── chassis_main.step
+├── chassis_main.f3d
+├── assembly.f3d
+└── drawings.pdf
+```
+
+**Spécifications de conception** :
+- **Matériau** : PLA/PETG/ABS
+- **Épaisseur paroi** : 3mm
+- **Tolérances** : ±0.2mm
+- **Finition** : Lisse, sans supports visibles
+
+### Étape 2 : Impression 3D
+
+**Paramètres d'impression** :
+```gcode
+; Paramètres d'impression
+LAYER_HEIGHT=0.2
+WALL_THICKNESS=1.2
+INFILL_PATTERN=grid
+INFILL_DENSITY=30%
+PRINT_TEMPERATURE=210°C
+BED_TEMPERATURE=60°C
+PRINT_SPEED=50mm/s
+```
+
+**Checklist avant impression** :
+- [ ] Nettoyage du plateau
+- [ ] Calibration de la hauteur
+- [ ] Vérification du filament
+- [ ] Test d'extrusion
+
+### Étape 3 : Assemblage
+
+**Ordre d'assemblage** :
+1. Montage de la base
+2. Fixation des entretoises
+3. Installation des composants électroniques
+4. Fixation du couvercle supérieur
+5. Vérification de l'alignement
+
+**Schéma d'assemblage** :
+```
+[Base] ──┐
+         ├── [Entretoises] ──┐
+[Composants] ──┘              ├── [Couvercle]
+                              └── [Fixations]
+```
+
+### Étape 4 : Tests de résistance
+
+**Test de charge statique** :
+```python
+# Simulation de test de charge
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Données de test
+loads = np.array([0, 5, 10, 15, 20, 25])  # kg
+deflections = np.array([0, 0.5, 1.0, 1.5, 2.0, 2.5])  # mm
+
+plt.figure(figsize=(10, 6))
+plt.plot(loads, deflections, 'o-', linewidth=2, markersize=8)
+plt.xlabel('Charge (kg)')
+plt.ylabel('Déflexion (mm)')
+plt.title('Test de résistance du chassis')
+plt.grid(True)
+plt.show()
+```
+
+## 📈 Résultats attendus
+
+### Spécifications techniques
+
+<Table headers={["Propriété", "Valeur cible", "Valeur mesurée", "Statut"]}
+  data={[
+    ["Poids total", "<2kg", "1.8kg", "✅"],
+    ["Résistance charge", ">20kg", "25kg", "✅"],
+    ["Déflexion max", "<2mm", "1.5mm", "✅"],
+    ["Rigidité", ">5 GPa", "6.2 GPa", "✅"],
+    ["Temps d'impression", "<12h", "10.5h", "✅"]
+  ]}
+/>
+
+### Tests de durabilité
+
+<FeatureGrid items={[
+  {icon:"🔄", title:"Cycles de charge", description:"1000 cycles sans défaillance"},
+  {icon:"🌡️", title:"Résistance thermique", description:"-10°C à +60°C"},
+  {icon:"💨", title:"Résistance vibrations", description:"5-100Hz, 2G max"},
+  {icon:"⚡", title:"Résistance chocs", description:"50G pendant 1ms"}
+]} />
+
+## 🔍 Validation des résultats
+
+### Analyse dimensionnelle
+
+**Vérification des tolérances** :
+```python
+# Script de vérification dimensionnelle
+import numpy as np
+
+# Dimensions théoriques
+theoretical = {
+    'length': 200.0,  # mm
+    'width': 150.0,   # mm
+    'height': 50.0    # mm
+}
+
+# Dimensions mesurées
+measured = {
+    'length': 199.8,
+    'width': 150.1,
+    'height': 49.9
+}
+
+# Calcul des écarts
+tolerance = 0.2  # mm
+for dim in theoretical:
+    error = abs(theoretical[dim] - measured[dim])
+    status = "✅" if error <= tolerance else "❌"
+    print(f"{dim}: {error:.2f}mm {status}")
+```
+
+### Tests de performance
+
+**Graphique de performance** :
+```python
+import matplotlib.pyplot as plt
+
+# Données de test
+test_scenarios = ['Statique', 'Dynamique', 'Vibrations', 'Chocs']
+performance_scores = [95, 88, 92, 85]
+
+plt.figure(figsize=(10, 6))
+bars = plt.bar(test_scenarios, performance_scores, color=['#10b981', '#3b82f6', '#f59e0b', '#ef4444'])
+plt.ylabel('Score de performance (%)')
+plt.title('Résultats des tests mécaniques')
+plt.ylim(0, 100)
+plt.grid(True, alpha=0.3, axis='y')
+
+# Ajouter les valeurs sur les barres
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2., height,
+             f'{int(height)}%', ha='center', va='bottom')
+
+plt.tight_layout()
+plt.show()
+```
+
+## 🚨 Dépannage
+
+### Problèmes courants
+
+#### 1. Déformation lors de l'impression
+- Vérifier la température du plateau
+- Ajuster la vitesse d'impression
+- Utiliser des supports si nécessaire
+- Vérifier le refroidissement
+
+#### 2. Assemblage difficile
+```markdown
+**Solutions** :
+- Vérifier les tolérances de conception
+- Utiliser des outils de calibrage
+- Ajuster les paramètres d'impression
+- Prévoir des jeux fonctionnels
+```
+
+#### 3. Résistance insuffisante
+- Augmenter l'épaisseur des parois
+- Modifier le motif de remplissage
+- Changer de matériau (PETG au lieu de PLA)
+- Ajouter des renforts structurels
+
+### Checklist de vérification
+
+- [ ] Dimensions conformes aux spécifications
+- [ ] Pas de déformations visibles
+- [ ] Tous les trous de montage alignés
+- [ ] Surface lisse et finition correcte
+- [ ] Résistance mécanique validée
+
+## 📝 Rapport de test
+
+### Résumé des performances
+- **Durée de conception** : [X] heures
+- **Temps d'impression** : [X] heures
+- **Temps d'assemblage** : [X] heures
+- **Poids final** : [X] kg
+- **Résistance validée** : [X] kg
+
+### Recommandations
+1. **Optimisation** : Réduire le poids si possible
+2. **Amélioration** : Tester d'autres matériaux
+3. **Maintenance** : Prévoir des pièces de rechange
+4. **Documentation** : Mettre à jour les fichiers CAO
+
+## 🔄 Tests de suivi
+
+### Scénarios de test
+- Test de résistance statique
+- Test de résistance dynamique
+- Test de vibrations
+- Test de chocs
+- Test de vieillissement
+
+### Métriques à surveiller
+- Déformation sous charge
+- Résistance à la fatigue
+- Stabilité dimensionnelle
+- Durabilité des fixations
+
+---
+
+## 📸 Ajout d'images et schémas
+
+Pour ajouter des images, placez-les dans `static/img/` :
+
+```markdown
+![Vue 3D du chassis](/img/chassis-3d-view.png)
+![Schéma d'assemblage](/img/assembly-diagram.png)
+![Résultats de test](/img/test-results.png)
+```
+
+## 🔗 Liens utiles
+
+- [Fusion 360 Documentation](https://help.autodesk.com/view/fusion360/)
+- [Guide d'impression 3D](/docs/Mechanics/3d-printing-guide)
+- [Calculs de résistance](/docs/Mechanics/strength-calculations)
+
+---
+
+## 💡 Composants React disponibles
+
+### InfoCard
+```jsx
+<InfoCard type="info" title="Titre" icon="🔧">
+Contenu de la carte d'information
+</InfoCard>
+```
+
+Types disponibles : `info`, `warning`, `success`, `danger`
+
+### FeatureGrid
+```jsx
+<FeatureGrid items={[
+  {icon:"🔧", title:"Titre 1", description:"Description 1"},
+  {icon:"⚙️", title:"Titre 2", description:"Description 2"}
+]} />
+```
+
+### Table
+```jsx
+<Table headers={["Propriété", "Valeur"]}
+  data={[
+    ["Poids", "1.8kg"],
+    ["Résistance", "25kg"]
+  ]}
+/>
+```
+
+---
+
+*Template créé le : [Date]*
+*Dernière mise à jour : [Date]*
+*Statut : ✅ Template prêt à l'emploi*

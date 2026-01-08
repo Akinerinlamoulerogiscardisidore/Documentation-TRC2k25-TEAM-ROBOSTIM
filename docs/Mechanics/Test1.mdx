@@ -1,0 +1,71 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Mechanics/Test1
+title: 'Test 1 — Niveau Débutant'
+sidebar_label: Test 1
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="📐">
+Test de niveau débutant en mécanique : Modélisation CAO de pièces simples avec application des contraintes géométriques de base, respect des dimensions et calcul des masses.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue vos compétences de base en modélisation CAO (Conception Assistée par Ordinateur). Vous devrez modéliser des pièces simples en respectant les dimensions fournies et appliquer les contraintes géométriques appropriées.
+
+### Compétences évaluées
+
+<FeatureGrid items={[
+  {icon:"📐", title:"Contraintes", description:"Application des contraintes géométriques"},
+  {icon:"📏", title:"Dimensions", description:"Respect de toutes les dimensions"},
+  {icon:"⚖️", title:"Masses", description:"Calcul des valeurs de masses"},
+  {icon:"🧩", title:"Assemblage", description:"Utilisation de toutes les pièces fournies"},
+  {icon:"📍", title:"Centre de masse", description:"Calcul des coordonnées du centre de masse"}
+]} />
+
+### Logiciels CAO recommandés
+
+<Table headers={["Logiciel", "Avantages", "Niveau"]}
+  data={[
+    ["Fusion 360", "Gratuit pour étudiants, complet", "Débutant à Avancé"],
+    ["SolidWorks", "Industriel, très puissant", "Intermédiaire à Avancé"],
+    ["FreeCAD", "Open source, gratuit", "Débutant à Intermédiaire"],
+    ["Onshape", "En ligne, collaboratif", "Débutant à Avancé"]
+  ]}
+/>
+
+### Critères de notation (70 points sur 300, ramené à 100)
+
+Les challenges débutant et intermédiaire seront notés sur **70 points chacun** :
+
+1. **Contraintes géométriques (15 points)** : Application des contraintes adéquates
+2. **Dimensions (15 points)** : Respect de toutes les dimensions
+3. **Masses (15 points)** : Capacité à trouver les bonnes valeurs de masses
+4. **Assemblage (15 points)** : Utilisation de toutes les pièces fournies
+5. **Contraintes d'assemblage (10 points)** : Utilisation de toutes les contraintes nécessaires
+
+### Livrables attendus
+
+- **Fichiers CAO** : Modèles 3D de chaque pièce (.step, .f3d, .sldprt)
+- **Assemblage** : Fichier d'assemblage complet
+- **Documentation** : Rapport avec captures d'écran, dimensions, masses
+- **GitHub** : Dépôt avec tous les fichiers et documentation
+
+### Étapes recommandées
+
+1. **Analyse** : Lire et comprendre les spécifications
+2. **Esquisse** : Créer les esquisses de base
+3. **Modélisation** : Créer les pièces en 3D
+4. **Contraintes** : Appliquer les contraintes géométriques
+5. **Assemblage** : Assembler toutes les pièces
+6. **Vérification** : Vérifier dimensions, masses, centre de masse
+7. **Documentation** : Créer le rapport complet
+
+---
+
+*Pour plus de détails, consultez les spécifications complètes du test.*

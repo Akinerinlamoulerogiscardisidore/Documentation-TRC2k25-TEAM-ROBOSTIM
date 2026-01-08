@@ -1,0 +1,86 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: ROS/Test2
+title: 'Test 2 — Introduction à ROS 2'
+sidebar_label: Test 2
+---
+
+## Présentation <span className="badge-sticker badge-it">🤖 ROS 2</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🛰️">
+Introduction à ROS 2 : Apprentissage des concepts fondamentaux de ROS 2, création de nœuds, publication/abonnement de topics, et utilisation des services.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à comprendre et utiliser ROS 2 pour créer des systèmes robotiques distribués. Vous devrez créer des nœuds ROS 2 capables de communiquer via topics et services.
+
+### Concepts ROS 2
+
+<FeatureGrid items={[
+  {icon:"📡", title:"Topics", description:"Publication/Subscription de messages"},
+  {icon:"🔧", title:"Services", description:"Communication requête/réponse"},
+  {icon:"🗺️", title:"TF", description:"Transformations de repères"},
+  {icon:"📦", title:"Packages", description:"Organisation du code"},
+  {icon:"🛠️", title:"Nodes", description:"Processus ROS 2"}
+]} />
+
+### Nœuds et topics à créer
+
+<Table headers={["Nœud", "Topic/Service", "Type", "Description"]}
+  data={[
+    ["publisher_node", "/chatter", "std_msgs/String", "Publication de messages"],
+    ["subscriber_node", "/chatter", "std_msgs/String", "Réception de messages"],
+    ["service_server", "/add_two_ints", "example_interfaces/AddTwoInts", "Service de calcul"],
+    ["service_client", "/add_two_ints", "example_interfaces/AddTwoInts", "Client de service"]
+  ]}
+/>
+
+### Structure de package ROS 2
+
+```
+my_robot_package/
+├── package.xml
+├── setup.py
+├── setup.cfg
+└── my_robot_package/
+    ├── __init__.py
+    ├── publisher_node.py
+    ├── subscriber_node.py
+    └── service_node.py
+```
+
+### Critères de notation (100 points)
+
+1. **Compréhension (25 points)** : Maîtrise des concepts ROS 2
+2. **Implémentation (40 points)** : Nœuds fonctionnels, communication correcte
+3. **Documentation (20 points)** : README, commentaires, explications
+4. **Tests (10 points)** : Validation du fonctionnement
+5. **Présentation (5 points)** : Démonstration, réponses
+
+### Exemple de code
+
+```python
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class PublisherNode(Node):
+    def __init__(self):
+        super().__init__('publisher_node')
+        self.publisher = self.create_publisher(String, 'chatter', 10)
+        self.timer = self.create_timer(1.0, self.publish_message)
+    
+    def publish_message(self):
+        msg = String()
+        msg.data = 'Hello ROS 2!'
+        self.publisher.publish(msg)
+        self.get_logger().info('Publishing: "%s"' % msg.data)
+```
+
+---
+
+*Pour plus de détails, consultez la documentation ROS 2 officielle.*

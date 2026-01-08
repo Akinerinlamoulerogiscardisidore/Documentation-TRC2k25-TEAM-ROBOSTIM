@@ -1,0 +1,57 @@
+.codeContainer {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #1e293b;
+}
+
+.codeTitle {
+  background: #334155;
+  color: #e2e8f0;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-bottom: 1px solid #475569;
+}
+
+.codeBlock {
+  margin: 0;
+  padding: 20px;
+  background: #1e293b;
+  color: #e2e8f0;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.codeBlock code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Syntax highlighting for C++ */
+.language-cpp .token.keyword {
+  color: #c792ea;
+}
+
+.language-cpp .token.string {
+  color: #c3e88d;
+}
+
+.language-cpp .token.comment {
+  color: #676e95;
+  font-style: italic;
+}
+
+.language-cpp .token.number {
+  color: #f78c6c;
+}
+
+.language-cpp .token.function {
+  color: #82aaff;
+}

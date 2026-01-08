@@ -1,0 +1,83 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: Mechanics/Test3
+title: 'Test 3 — Niveau Avancé'
+sidebar_label: Test 3
+---
+
+## Présentation <span className="badge-sticker badge-mecanique">🛠️ Mécanique</span>
+
+<InfoCard type="success" title="Aperçu du test" icon="🏗️">
+Test de niveau avancé en mécanique : Conception complète d'un convoyeur fonctionnel avec toutes ses pièces, respect des spécifications techniques, et simulation mécanique optionnelle.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue vos compétences avancées en conception mécanique. Vous devrez concevoir un convoyeur totalement fonctionnel et capable de déplacer de petits objets, en respectant toutes les spécifications techniques.
+
+### Compétences évaluées
+
+<FeatureGrid items={[
+  {icon:"🏗️", title:"Conception", description:"Conception complète du convoyeur"},
+  {icon:"⚙️", title:"Fonctionnalité", description:"Capacité à déplacer des objets"},
+  {icon:"📐", title:"Spécifications", description:"Respect des spécifications techniques"},
+  {icon:"🖨️", title:"Faisabilité", description:"Faisabilité pour impression 3D"},
+  {icon:"🧪", title:"Simulation", description:"Simulation mécanique (bonus)"}
+]} />
+
+### Spécifications techniques
+
+<Table headers={["Spécification", "Description", "Criticité"]}
+  data={[
+    ["Contraintes géométriques", "Application des contraintes adéquates", "Critique"],
+    ["Dimensions", "Respect de toutes les dimensions", "Critique"],
+    ["Masses", "Capacité à trouver les bonnes valeurs", "Important"],
+    ["Fonctionnalité", "Convoyeur capable de déplacer objets", "Critique"],
+    ["Faisabilité 3D", "Modèles imprimables en 3D", "Important"],
+    ["Assemblage", "Assemblage possible et fonctionnel", "Critique"]
+  ]}
+/>
+
+### Critères de notation (110 points sur 300, ramené à 100)
+
+**Conception et assemblage (100 points)** :
+1. **Contraintes géométriques (20 points)** : Application correcte
+2. **Dimensions (20 points)** : Respect complet
+3. **Masses (15 points)** : Calculs précis
+4. **Conception convoyeur (25 points)** : Fonctionnel et complet
+5. **Spécifications techniques (10 points)** : Respect des specs
+6. **Faisabilité 3D (10 points)** : Modèles imprimables
+
+**Bonus Simulation (10 points)** :
+- Simulation pertinente réalisée
+- Informations utiles recueillies
+- Analyse et amélioration basée sur la simulation
+
+### Documentation requise
+
+Pour assurer la traçabilité et la compréhension complète du projet :
+
+- **Études préliminaires** : Analyse des besoins fonctionnels et contraintes mécaniques
+- **Choix et justification** : Sélection des matériaux et composants
+- **Modélisation CAO** : Modèles 3D de chaque composant et assemblage
+- **Validation** : Vérification de l'intégrité mécanique et de l'agencement
+- **Simulation** : Résultats de simulation (si réalisée)
+- **GitHub** : Dépôt complet avec tous les fichiers
+
+### Points importants
+
+⚠️ **Attention** : Toute équipe n'ayant pas réalisé une documentation complète et détaillée se verra retirer **30 points** sur sa note finale.
+
+### Améliorations possibles
+
+- **Simulation FEA** : Analyse par éléments finis
+- **Optimisation** : Réduction de masse, amélioration de la rigidité
+- **Innovation** : Solutions créatives et originales
+- **Documentation avancée** : Animations, vidéos, rendus 3D
+
+---
+
+*Pour plus de détails, consultez les spécifications complètes du test.*

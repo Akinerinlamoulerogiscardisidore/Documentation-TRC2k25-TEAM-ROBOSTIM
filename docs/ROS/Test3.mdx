@@ -1,0 +1,52 @@
+import InfoCard from '@site/src/components/InfoCard';
+import FeatureGrid from '@site/src/components/FeatureGrid';
+import Table from '@site/src/components/Table';
+
+---
+id: ROS/Test3
+title: 'Test 3 — Algorithme de Pathfinding'
+sidebar_label: Test 3
+---
+
+## Présentation <span className="badge-sticker badge-it">🧠 IA</span>
+
+<InfoCard type="info" title="Aperçu du test" icon="🧭">
+Création d'un algorithme de pathfinding permettant à un robot de trouver le chemin optimal entre un point de départ et un point d'arrivée dans un environnement avec obstacles.
+</InfoCard>
+
+### Objectif
+
+Ce test évalue votre capacité à implémenter des algorithmes de recherche de chemin. Vous devrez créer un algorithme capable de trouver le chemin le plus court ou le plus efficace.
+
+### Algorithmes possibles
+
+<FeatureGrid items={[
+  {icon:"⭐", title:"A*", description:"Algorithme A* (A-star) - Optimal"},
+  {icon:"🌳", title:"Dijkstra", description:"Plus court chemin"},
+  {icon:"🔄", title:"RRT", description:"Rapidly-exploring Random Tree"},
+  {icon:"📐", title:"RRT*", description:"Version optimisée"},
+  {icon:"🧩", title:"Autre", description:"Algorithme personnalisé"}
+]} />
+
+### Fonctionnalités attendues
+
+<Table headers={["Fonctionnalité", "Description", "Priorité"]}
+  data={[
+    ["Recherche de chemin", "Trouver un chemin valide", "Obligatoire"],
+    ["Éviter obstacles", "Détection et contournement", "Obligatoire"],
+    ["Optimisation", "Chemin le plus court/rapide", "Recommandé"],
+    ["Visualisation", "Affichage graphique", "Recommandé"]
+  ]}
+/>
+
+### Critères de notation (100 points)
+
+1. **Algorithme (40 points)** : Implémentation correcte, optimisation
+2. **Fonctionnement (30 points)** : Chemin valide, évite obstacles
+3. **Code (15 points)** : Qualité, lisibilité, commentaires
+4. **Documentation (10 points)** : Explications, schémas
+5. **Présentation (5 points)** : Démonstration, visualisation
+
+---
+
+*Pour plus de détails, consultez la documentation complète.*
