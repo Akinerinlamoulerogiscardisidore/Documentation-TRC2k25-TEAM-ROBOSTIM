@@ -16,7 +16,7 @@ module.exports = {
   // ✅ NOM EXACT DU REPO
   projectName: 'Documentation-TRC2k25-TEAM-ROBOSTIM',
 
-  deploymentBranch: 'gh-pages',
+  deploymentBranch: 'main',
   trailingSlash: false,
   favicon: 'img/favicon.ico',
 
